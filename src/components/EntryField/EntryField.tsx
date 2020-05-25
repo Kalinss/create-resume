@@ -1,11 +1,10 @@
 import React from 'react';
-import {IEntryFieldProps} from "./EntryField.inteface";
+import {IEntryFieldProps} from "./EntryField.interface";
 
 
 export const EntryField: React.FunctionComponent<IEntryFieldProps> = (props) => {
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         props.handlerChange({
-            name:props.name,
             id:props.id,
             value:e.target.value
         })

@@ -4,5 +4,11 @@ export interface IEntryFieldProps {
     required:boolean,
     placeholder:string,
     id:string,
-    handlerChange:any
+    handlerChange?:any
+};
+export interface IWantedPosition{
+    handlerChange?:any
+};
+export interface IWantedSalary{
+    handlerChange?:any
 };

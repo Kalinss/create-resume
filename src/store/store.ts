@@ -7,13 +7,16 @@ export const ResumeContext = createContext<any>(null);
 // TODO: types
 export const reducers = (state: any, action: any): any => {
     switch (action.type) {
-        case 'add':
-            console.log(action);
+        case 'changeCheckbox':
             return {
                 ...state,
-                [action.info.id]:{
-                    ...action.info
-                }
+                [action.id]:action.checked
+            };
+            break;
+        case 'add':
+            return {
+                ...state,
+                [action.id]:action.value
             };
             break;
         default:
