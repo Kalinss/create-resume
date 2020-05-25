@@ -1,5 +1,5 @@
 import React from "react";
-import {ISelectProps} from "./Select.interface";
+import {ISelectProps} from "../../interfaces";
 import {IActionAdd} from "../../interfaces";
 
 export const Select:React.FunctionComponent<ISelectProps> = (props)=>{

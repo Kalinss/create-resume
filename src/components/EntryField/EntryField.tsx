@@ -1,5 +1,5 @@
 import React from 'react';
-import {IEntryFieldProps} from "./EntryField.interface";
+import {IEntryFieldProps} from "../../interfaces";
 
 
 export const EntryField: React.FunctionComponent<IEntryFieldProps> = (props) => {

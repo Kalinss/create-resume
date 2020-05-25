@@ -1,23 +1,23 @@
-import React,{useContext} from "react";
+import React, {useContext} from "react";
 import {EntryField} from "../EntryField/EntryField";
 import {ResumeContext} from "../../store/store";
-import {IWantedPosition} from "../EntryField/EntryField.interface";
+import {IWantedPositionProps} from "../../interfaces";
 
-export const WantedPosition:React.FunctionComponent<IWantedPosition> = (props)=>{
+export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (props) => {
 
     const context = useContext(ResumeContext);
 
-    const handlerClickCheckbox = (e:React.ChangeEvent<HTMLInputElement>):void=>{
-            context.dispatch({type:'changeCheckbox',id:'bussinessTrip',checked:e.target.checked})
+    const handlerClickCheckbox = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        context.dispatch({type: 'add', id: 'bussinessTrip', value: e.target.checked})
     };
 
-    return(
+    return (
         <div>
             <EntryField
                 name='Желаемая должность'
                 required={false}
                 placeholder=''
-                id = 'wantedPosition'
+                id='wantedPosition'
                 handlerChange={props.handlerChange}
             />
             <div>

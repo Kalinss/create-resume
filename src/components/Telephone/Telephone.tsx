@@ -1,9 +1,9 @@
 import React, {ChangeEvent, useState} from "react";
 import {Select} from "../Select/Select";
 import {EntryField} from "../EntryField/EntryField";
-import {ITelephone} from "./Telephone.interface";
+import {ITelephoneProps} from "../../interfaces";
 
-export const Telephone: React.FunctionComponent<ITelephone> = (props) => {
+export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
     const [code, setCode] = useState('+7');
     const [tel, setTel] = useState('');
 

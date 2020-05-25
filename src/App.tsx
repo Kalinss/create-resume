@@ -13,16 +13,18 @@ import {Photo} from "./components/Photo/Photo";
 
 
 
+
 const App: React.FunctionComponent = () => {
     const [state, dispatch] = useReducer(reducers, initialState);
 
-    const actionAdd = (info: IActionAdd) => {
+    const actionAdd = (info: IActionAdd):void => {
         dispatch({type: 'add', id: info.id, value: info.value})
     };
 
     return (
         <>
             <ResumeContext.Provider value={{state, dispatch}}>
+
                 <h1>Создать резюме</h1>
                 <EntryField
                     handlerChange={actionAdd}
@@ -44,13 +46,9 @@ const App: React.FunctionComponent = () => {
                         handlerChange={actionAdd}
                 />
                 <Telephone
-                    id='telephone'
-                    name='telephone'
                     handlerChange={actionAdd}
                 />
                 <Photo
-                    name='photo'
-                    id='photo'
                     handlerChange={actionAdd}
                 />
             </ResumeContext.Provider>

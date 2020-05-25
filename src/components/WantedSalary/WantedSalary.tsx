@@ -1,10 +1,10 @@
 import React,{useState} from "react";
 import {EntryField} from "../EntryField/EntryField";
-import {IWantedPosition} from "../EntryField/EntryField.interface";
 import {IActionAdd} from '../../interfaces'
 import {Select} from "../Select/Select";
+import {IWantedSalaryProps} from "../../interfaces";
 
-export const WantedSalary:React.FunctionComponent<IWantedPosition> = (props) => {
+export const WantedSalary:React.FunctionComponent<IWantedSalaryProps> = (props) => {
 
     const [option,setOption] = useState<string>('рублей');
     const onChange = (info:IActionAdd)=>{

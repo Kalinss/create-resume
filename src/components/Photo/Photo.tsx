@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import {toBase64} from "../../utils/toBase64";
-import {IPhoto} from "./IPhoto";
+import {IPhotoProps} from "../../interfaces";
 
-export const Photo:React.FunctionComponent<IPhoto> = (props)=>{
+export const Photo:React.FunctionComponent<IPhotoProps> = (props)=>{
     const [code,setCode] = useState<string>('');
     const onChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
         toBase64(e.currentTarget,(base64:string)=>{
