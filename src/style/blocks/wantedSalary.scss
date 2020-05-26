@@ -1,0 +1,17 @@
+.wantedSalary {
+  display: flex;
+  flex-direction: row;
+  &__entryField {
+    & input {
+      width: 255px;
+    }
+  }
+  &__select {
+    & select {
+      margin-left: 0;
+      padding-left: 5px;
+      padding-right: 10px;
+      width: 105px;
+    }
+  }
+}

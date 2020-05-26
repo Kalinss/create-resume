@@ -1,0 +1,16 @@
+.section {
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  &__entryField {
+    margin-bottom: 15px;
+  }
+  &__wantedPosition {
+    margin-bottom: 50px;
+  }
+  &__photo {
+    margin-bottom: 50px;
+  }
+}

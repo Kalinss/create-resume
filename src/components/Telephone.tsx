@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Select } from "../Select/Select";
-import { EntryField } from "../EntryField/EntryField";
-import { ITelephoneProps } from "../../interfaces";
+import { Select } from "./Select";
+import { EntryField } from "./EntryField";
+import { ITelephoneProps } from "../interfaces";
+import "./../style/blocks/telephone.scss";
 
 export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
   const [code, setCode] = useState("+7");
@@ -20,11 +21,12 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
     props.handlerChange({ id: "tel", value: `${code}${tel}` });
   };
   return (
-    <div>
+    <div className={`tel ${props.class || ""}`}>
       <Select
         name="Телефон"
         id="telephone"
         handlerChange={onSelect}
+        class="tel__select"
         options={[
           "+7",
           "+77",
@@ -49,6 +51,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
         id=""
         handlerChange={onChange}
         placeholder=""
+        class="tel__entryField"
       />
     </div>
   );

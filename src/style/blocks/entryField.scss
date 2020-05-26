@@ -1,0 +1,16 @@
+.entryField {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  &__title {
+    font-weight: 600;
+  }
+  &__require {
+    font-size: 11px;
+  }
+  &__input {
+    width: 360px;
+    margin-left: 20px;
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { EntryField } from "../EntryField/EntryField";
-import { ResumeContext } from "../../store/store";
-import { IWantedPositionProps } from "../../interfaces";
+import { EntryField } from "./EntryField";
+import { ResumeContext } from "../store/store";
+import { IWantedPositionProps } from "../interfaces";
+import "./../style/blocks/wantedProsition.scss";
 
 export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
   props
@@ -19,22 +20,22 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
   };
 
   return (
-    <div>
+    <div className={`wantedPosition ${props.class || ""}`}>
       <EntryField
-        title="Желаемая должность"
-        name='wantedPosition'
+        title="Должность"
+        name="wantedPosition"
         required={false}
         placeholder=""
         id="wantedPosition"
         handlerChange={props.handlerChange}
       />
-      <div>
-        <label id="businessTrip">Готовность к командировкам</label>
+      <div className="wantedPosition__checkbox">
         <input
           id="businessTrip"
           onChange={handlerClickCheckbox}
           type="checkbox"
         />
+        <label className="label">Готовность к командировкам</label>
       </div>
     </div>
   );

@@ -1,3 +1,1 @@
-export const initialState:object = {
-
-};
+export const initialState: object = {};

@@ -1,0 +1,31 @@
+.photo {
+  display: flex;
+  &__label {
+    display: block;
+    margin-top: 15px;
+  }
+  &__wrapper {
+    cursor: pointer;
+    margin-left: 30px;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+  }
+  &__img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+  }
+  & input {
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    opacity: 0;
+  }
+}

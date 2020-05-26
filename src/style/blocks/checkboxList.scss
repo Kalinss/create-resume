@@ -1,0 +1,9 @@
+.checkboxList {
+  display: flex;
+  &__item {
+    margin-left: 20px;
+  }
+  &__itemName {
+    margin-left: 2px;
+  }
+}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { EntryField } from "../EntryField/EntryField";
-import { IActionAdd } from "../../interfaces";
-import { Select } from "../Select/Select";
-import { IWantedSalaryProps } from "../../interfaces";
-
+import { EntryField } from "./EntryField";
+import { IActionAdd } from "../interfaces";
+import { Select } from "./Select";
+import { IWantedSalaryProps } from "../interfaces";
+import "./../style/blocks/wantedSalary.scss";
 export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
   props
 ) => {
@@ -13,7 +13,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
   };
 
   return (
-    <div>
+    <div className={`wantedSalary ${props.class || ""}`}>
       <EntryField
         title="Желаемая зарплата"
         name="salary"
@@ -21,6 +21,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
         required={false}
         placeholder="100000"
         handlerChange={onChange}
+        class="wantedSalary__entryField"
       />
       <Select
         name=""
@@ -36,6 +37,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
           "сом",
           "сум",
         ]}
+        class="wantedSalary__select"
         handlerChange={(inf: IActionAdd) => {
           setOption(inf.value);
         }}

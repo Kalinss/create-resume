@@ -1,6 +1,6 @@
 import React from "react";
-import { IEntryFieldProps } from "../../interfaces";
-
+import { IEntryFieldProps } from "../interfaces";
+import "./../style/blocks/entryField.scss";
 export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
   props
 ) => {
@@ -12,12 +12,17 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
   };
 
   return (
-    <div className="entryField">
-      <label id={props.id}>
-        {props.title && <span>{props.title}</span>}
-        {props.required && <span>(обязательно)</span>}
+    <div className={`entryField ${props.class || ""}`}>
+      <label className="entryField__label label" id={props.id}>
+        {props.title && (
+          <span className="entryField__title">{props.title}</span>
+        )}
+        {props.required && (
+          <span className="entryField__require"> (обязательно) </span>
+        )}
       </label>
       <input
+        className="input entryField__input"
         name={props.name}
         id={props.id}
         placeholder={props.placeholder}

@@ -1,0 +1,24 @@
+.input {
+  font-size: 14px;
+  font-family: $main-ff;
+  color: $input-color-text;
+  transition: 0.3s ease;
+  width: 100%;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset;
+  outline: none;
+  padding: 12px 15px;
+  &:focus {
+    border: 1px solid #b3c5d3;
+    box-shadow: rgba(102, 175, 233, 1) 0px 1px 1px 0px inset;
+  }
+  &.error {
+    border: 1px solid #bb4442;
+    box-shadow: rgba(187, 68, 66, 0.6) 0px 1px 1px 0px inset;
+  }
+  &.positive {
+    border: 1px solid #3c763d;
+    box-shadow: rgba(60, 118, 61, 0.6) 0px 1px 1px 0px inset;
+  }
+}

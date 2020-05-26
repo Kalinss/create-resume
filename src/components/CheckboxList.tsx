@@ -1,6 +1,6 @@
-import React, {useState } from "react";
-import { ICheckboxlistProps } from "../../interfaces";
-
+import React, { useState } from "react";
+import { ICheckboxlistProps } from "../interfaces";
+import "./../style/blocks/checkboxList.scss";
 export const CheckboxList: React.FunctionComponent<ICheckboxlistProps> = (
   props
 ) => {
@@ -22,12 +22,14 @@ export const CheckboxList: React.FunctionComponent<ICheckboxlistProps> = (
   };
 
   return (
-    <div>
+    <div className={`checkboxList ${props.class || ""}`}>
       {props.items.map((item, i) => {
         return (
-          <div key={i}>
-            <input onChange={onChange} type="checkbox" id={item}  />
-            <label htmlFor={item}>{item}</label>
+          <div className="checkboxList__item" key={i}>
+            <input onChange={onChange} type="checkbox" id={item} />
+            <label className="checkboxList__itemName" htmlFor={item}>
+              {item}
+            </label>
           </div>
         );
       })}
