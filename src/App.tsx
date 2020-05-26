@@ -11,6 +11,7 @@ import { Select } from "./components/Select/Select";
 import { Telephone } from "./components/Telephone/Telephone";
 import { Photo } from "./components/Photo/Photo";
 import { CheckboxList } from "./components/CheckboxList/CheckboxList";
+import { RadioList } from "./components/RadioList/RadioList";
 
 const App: React.FunctionComponent = () => {
   const [state, dispatch] = useReducer(reducers, initialState);
@@ -50,6 +51,12 @@ const App: React.FunctionComponent = () => {
           items={["лдин", "werwe"]}
           name="communication"
           handlerChange={actionAdd}
+        />
+        <RadioList
+            items={["asd","fgaf"]}
+            handlerChange={actionAdd}
+            name='gender'
+            title='Пол'
         />
       </ResumeContext.Provider>
     </>

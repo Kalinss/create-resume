@@ -38,3 +38,9 @@ export interface ICheckboxlistProps {
   handlerChange: IActionFunc;
   name: string;
 }
+export interface IRadioList {
+  items: string[];
+  handlerChange: IActionFunc;
+  name: string;
+  title:string;
+}
