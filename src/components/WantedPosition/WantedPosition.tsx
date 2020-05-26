@@ -21,7 +21,8 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
   return (
     <div>
       <EntryField
-        name="Желаемая должность"
+        title="Желаемая должность"
+        name='wantedPosition'
         required={false}
         placeholder=""
         id="wantedPosition"

@@ -25,13 +25,14 @@ const App: React.FunctionComponent = () => {
       <ResumeContext.Provider value={{ state, dispatch }}>
         <h1>Создать резюме</h1>
         <EntryField
+          title="Фамилия"
           handlerChange={actionAdd}
-          name="Фамилия"
+          name="familyname"
           id="familyname"
           required={true}
           placeholder=""
         />
-        <WantedPosition handlerChange={actionAdd} />
+        {/*<WantedPosition handlerChange={actionAdd} />*/}
         <WantedSalary handlerChange={actionAdd} />
         <Select
           name="Занятость"

@@ -15,7 +15,8 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
   return (
     <div>
       <EntryField
-        name="Желаемая зарплата"
+        title="Желаемая зарплата"
+        name="salary"
         id="salary"
         required={false}
         placeholder="100000"

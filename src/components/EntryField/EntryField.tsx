@@ -14,10 +14,11 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
   return (
     <div className="entryField">
       <label id={props.id}>
-        {props.name}
+        {props.title && <span>{props.title}</span>}
         {props.required && <span>(обязательно)</span>}
       </label>
       <input
+        name={props.name}
         id={props.id}
         placeholder={props.placeholder}
         onChange={(e) => {
@@ -28,4 +29,3 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
     </div>
   );
 };
-

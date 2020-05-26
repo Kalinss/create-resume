@@ -7,12 +7,14 @@ export interface IActionFunc {
   (obj: { id: string; value: string; businessTrip?: boolean }): void;
 }
 export interface IComponentFieldProps {
-  id: string;
+  id: string; // store -> [id:...props]
+  title?:string; // name section
+  required?:boolean;
+  placeholder?:string;
+  name:string; // input name
 }
 export interface IEntryFieldProps extends IComponentFieldProps {
-  name: string;
   required: boolean;
-  placeholder: string;
   handlerChange: IActionFunc;
 }
 export interface IWantedPositionProps {
