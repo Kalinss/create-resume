@@ -25,8 +25,8 @@ export const CheckboxList: React.FunctionComponent<ICheckboxlistProps> = (
     <div>
       {props.items.map((item, i) => {
         return (
-          <div>
-            <input onChange={onChange} type="checkbox" id={item} key={i} />
+          <div key={i}>
+            <input onChange={onChange} type="checkbox" id={item}  />
             <label>{item}</label>
           </div>
         );
