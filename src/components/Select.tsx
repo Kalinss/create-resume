@@ -9,7 +9,7 @@ export const Select: React.FunctionComponent<ISelectProps> = (props) => {
     <div className={`select ${props.class || ""}`}>
       <label className="headingInput">{props.name}</label>
       <select className="input" onChange={onChange} name={props.id}>
-        {props.options.map((item, i) => (
+        {props.items.map((item, i) => (
           <option key={i} value={item}>
             {item}
           </option>

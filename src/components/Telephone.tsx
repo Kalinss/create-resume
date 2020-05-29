@@ -27,7 +27,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
         id="telephone"
         handlerChange={onSelect}
         class="tel__select"
-        options={[
+        items={[
           "+7",
           "+77",
           "+370",

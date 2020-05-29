@@ -26,7 +26,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
       <Select
         name=""
         id="currency"
-        options={[
+        items={[
           "рублей",
           "долларов",
           "евро",

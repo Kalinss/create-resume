@@ -1,4 +1,14 @@
 .section {
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+  & > h1 {
+    margin-bottom: 20px;
+  }
+  & > h2 {
+    margin-bottom: 20px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: flex-start;

@@ -16,7 +16,7 @@ export const CheckboxList: React.FunctionComponent<ICheckboxlistProps> = (
       setCheckboxList(newCheckbox);
     }
     props.handlerChange({
-      id: props.name,
+      id: props.id,
       value: newCheckbox.join(",").trim(),
     });
   };
