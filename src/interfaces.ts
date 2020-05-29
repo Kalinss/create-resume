@@ -53,4 +53,5 @@ export interface IRadioList {
   name: string;
   title: string;
   id: string;
+  class?: string;
 }
