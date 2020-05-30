@@ -60,6 +60,7 @@ export const MainInfo: React.FunctionComponent = () => {
           />
           <Telephone handlerChange={actionAdd} class="section__entryField" />
           <CheckboxList
+            id="messengers"
             name="messengers"
             class="mainInfo__telephone"
             handlerChange={actionAdd}
@@ -72,7 +73,7 @@ export const MainInfo: React.FunctionComponent = () => {
             name="Занятость"
             id="busyness"
             class="section__entryField"
-            options={[
+            items={[
               "Полная",
               "Частичная",
               "Проектная",
@@ -85,7 +86,7 @@ export const MainInfo: React.FunctionComponent = () => {
             name="График работы"
             id="schedule"
             class="section__entryField"
-            options={[
+            items={[
               "Полный день",
               "Сменный график",
               "Гибкий график",

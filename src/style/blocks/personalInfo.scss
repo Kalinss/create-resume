@@ -1,0 +1,40 @@
+.personalInfo {
+  &__left {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__right {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__gender {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 15px;
+    & form {
+      display: flex;
+      width: 360px;
+      margin-left: 20px;
+      align-items: center;
+    }
+  }
+  &__children {
+    width: 360px;
+    margin-top: 20px;
+    & .checkboxList__item {
+      margin-left: 0;
+    }
+  }
+  &__entryField {
+    & .headingInput {
+      text-align: right;
+    }
+  }
+}
