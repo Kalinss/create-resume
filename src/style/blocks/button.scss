@@ -1,0 +1,50 @@
+.button{
+  padding: 7px 10px;
+  max-width: 105px;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid #ccc;
+  &:disabled{
+    opacity: 0.7;
+    cursor: auto;
+    &:hover{
+      border: 1px solid #ccc;
+    }
+  }
+  &.green{
+    color: white;
+    border-color:#398439;
+    font-size: 14px;
+    background-color: #5cb85c;
+    &:hover{
+      background-color: #449d44;
+    }
+    &:disabled{
+      opacity: 0.7;
+      cursor: auto;
+      &:hover{
+        border-color:#398439;
+        background-color: #5cb85c;
+      }
+    }
+  }
+  &.red{
+    color: white;
+    border-color:#ac2925;
+    font-size: 14px;
+    background-color: #d9534f;
+    &:hover{
+      background-color: #c9302c;
+    }
+    &:disabled{
+      opacity: 0.7;
+      cursor: auto;
+      &:hover{
+        border-color:#ac2925;
+        background-color: #d9534f;
+      }
+    }
+  }
+}

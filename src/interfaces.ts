@@ -12,6 +12,16 @@ export interface IActionAdd {
 export interface IActionFunc {
   (obj: { id: string; value: string; businessTrip?: boolean }): void;
 }
+export interface IEducationContentProps {
+    class?:string,
+    counter:number
+}
+export interface IButtonProps {
+    disabled:boolean,
+    class?:string,
+    text:string,
+     handlerChange:()=>void
+}
 export interface IComponentFieldProps {
   id: string; // store -> [id:...props]
   title?: string; // view name section
