@@ -29,11 +29,13 @@ export interface ICatalogComponentProps extends IComponentFieldProps{
 }
 
 export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{}
+export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
 
 export interface IWantedPositionProps extends IWrapperComponentFieldProps{}
 export interface IWantedSalaryProps extends IWrapperComponentFieldProps{}
 export interface ITelephoneProps extends IWrapperComponentFieldProps{}
 export interface IPhotoProps extends IWrapperComponentFieldProps{}
+export interface IDateOfBirth extends IWrapperComponentFieldProps {}
 
 export interface ISelectProps extends ICatalogComponentProps,IComponentMainHandler{}
 export interface ICheckboxlistProps extends ICatalogComponentProps,IComponentMainHandler{}

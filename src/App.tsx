@@ -4,6 +4,7 @@ import { initialState } from "./store/initialState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Constructor } from "./pages/Constructor";
 import { Page } from "./pages/Page";
+import "react-datepicker/dist/react-datepicker.css";
 
 const App: React.FunctionComponent = () => {
   const [state, dispatch] = useReducer(reducers, initialState);
