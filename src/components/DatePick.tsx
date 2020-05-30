@@ -22,6 +22,9 @@ export const DatePick: React.FunctionComponent<IDatePickProps> = (props) => {
             {...props.configDatePicker}
             selected={startDate}
             onChange={onChange}
+            //@ts-ignore
+            showYearPicker={props.configDatePicker.yearsOnly}
+            // showYearPicker type not yet added by plugin author
           />
         </div>
       </div>

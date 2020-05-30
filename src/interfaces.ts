@@ -1,6 +1,9 @@
 import {ReactNode} from "react";
 import {ReactDatePickerProps} from "react-datepicker";
 
+export interface expandedReactDatePickerProps extends ReactDatePickerProps{
+    yearsOnly?:boolean
+}
 export interface IActionAdd {
   id: string;
   value: string;
@@ -31,8 +34,8 @@ export interface ICatalogComponentProps extends IComponentFieldProps{
 export interface IDatePickProps extends IWrapperComponentFieldProps{
   title?: string;
   id: string;
-  configDatePicker:ReactDatePickerProps,
-  handlerFormatDate:(date:Date)=>string
+  configDatePicker:expandedReactDatePickerProps,
+  handlerFormatDate:(date:Date)=>string,
 }
 export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{}
 export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
