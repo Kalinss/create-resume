@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import {ReactDatePickerProps} from "react-datepicker";
 
 export interface IActionAdd {
   id: string;
@@ -27,7 +28,12 @@ export interface ICatalogComponentProps extends IComponentFieldProps{
   items: string[];
   children?:ReactNode
 }
-
+export interface IDatePickProps extends IWrapperComponentFieldProps{
+  title?: string;
+  id: string;
+  configDatePicker:ReactDatePickerProps,
+  handlerFormatDate:(date:Date)=>string
+}
 export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{}
 export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
 
@@ -35,7 +41,7 @@ export interface IWantedPositionProps extends IWrapperComponentFieldProps{}
 export interface IWantedSalaryProps extends IWrapperComponentFieldProps{}
 export interface ITelephoneProps extends IWrapperComponentFieldProps{}
 export interface IPhotoProps extends IWrapperComponentFieldProps{}
-export interface IDateOfBirth extends IWrapperComponentFieldProps {}
+
 
 export interface ISelectProps extends ICatalogComponentProps,IComponentMainHandler{}
 export interface ICheckboxlistProps extends ICatalogComponentProps,IComponentMainHandler{}

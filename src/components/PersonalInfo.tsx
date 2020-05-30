@@ -6,7 +6,9 @@ import { EntryField } from "./EntryField";
 import { Select } from "./Select";
 import { RadioList } from "./RadioList";
 import { CheckboxList } from "./CheckboxList";
-import { DateOfBirth } from "./DateOfBirth";
+import { DatePick } from "./DatePick";
+import { getStringDDMMYYYY } from "../utils/dateFormat";
+import ru from "date-fns/locale/ru";
 
 export const PersonalInfo: React.FunctionComponent = () => {
   const context = useContext(ResumeContext);
@@ -49,7 +51,20 @@ export const PersonalInfo: React.FunctionComponent = () => {
             ]}
             handlerChange={actionAdd}
           />
-          <DateOfBirth handlerChange={actionAdd} />
+          <DatePick
+            title="Год рождения"
+            id="dateBirth"
+            name="dateBirth"
+            handlerChange={actionAdd}
+            handlerFormatDate={getStringDDMMYYYY}
+            configDatePicker={{
+              onChange: () => {},
+              dateFormat: "dd.MM.yyyy",
+              locale: ru,
+              showMonthDropdown: true,
+              showYearDropdown: true,
+            }}
+          />
         </div>
         <div className="personalInfo__right right">
           <Select
