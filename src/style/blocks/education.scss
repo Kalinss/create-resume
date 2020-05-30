@@ -1,0 +1,30 @@
+.education {
+  &__institute {
+    width: 100%;
+    margin-bottom: 20px;
+    & label {
+      flex-shrink: 0;
+    }
+    & input {
+      width: 915px;
+    }
+  }
+  &__wrapper {
+    flex-direction: column;
+  }
+  &__wrapper-info {
+    display: flex;
+  }
+
+  &__content {
+    margin-bottom: 20px;
+  }
+  &__button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__button {
+    margin-left: 20px;
+  }
+}

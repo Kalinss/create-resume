@@ -8,3 +8,4 @@ export const getStringDDMMYYYY = (date: Date) => {
     .map((item) => (item < 10 ? `0${item}` : item.toString()))
     .join(".");
 };
+export const getStringYear = (date: Date) => date.getFullYear().toString();
