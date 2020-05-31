@@ -16,6 +16,14 @@ export interface IEducationContentProps {
     class?:string,
     counter:number
 }
+export interface IExperienceContentProps {
+    class?:string,
+    counter:number
+}
+export interface IWorkPeriodProps {
+    class?:string,
+    handlerChange: IActionFunc;
+}
 export interface IButtonProps {
     disabled:boolean,
     class?:string,
@@ -46,6 +54,9 @@ export interface IDatePickProps extends IWrapperComponentFieldProps{
   id: string;
   configDatePicker:expandedReactDatePickerProps,
   handlerFormatDate:(date:Date)=>string,
+}
+export interface ITextAreaProps extends IComponentFieldProps{
+    handlerChange: IActionFunc;
 }
 export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{}
 export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
