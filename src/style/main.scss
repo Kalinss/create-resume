@@ -20,7 +20,6 @@ h1 {
   margin-bottom: 10px;
 }
 h2 {
-  margin-bottom: 10px;
   font-size: 30px;
   color-rendering: $text-color-main;
   font-weight: 600;
@@ -45,4 +44,14 @@ h2 {
   font-family: $main-ff;
   font-size: 14px;
   font-weight: 600;
+}
+.createLink {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+}
+.createLink__button {
+  max-width: inherit !important;
+  padding: 12px 20px !important;
 }

@@ -8,7 +8,6 @@
   & > h2 {
     margin-bottom: 20px;
   }
-
   &__wrapper {
     display: flex;
     justify-content: flex-start;
@@ -16,8 +15,8 @@
   }
   &__entryField {
     margin-bottom: 15px;
-    &.full{
-      & input{
+    &.full {
+      & input {
         width: 915px;
       }
     }

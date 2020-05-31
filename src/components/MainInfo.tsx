@@ -35,7 +35,7 @@ export const MainInfo: React.FunctionComponent = () => {
             name="name"
             title="Имя"
             handlerChange={actionAdd}
-            id="familyName"
+            id="name"
             required={true}
             class="section__entryField"
             validationFunction={isNotEmpty}
