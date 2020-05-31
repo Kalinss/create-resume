@@ -9,7 +9,7 @@ export const DatePick: React.FunctionComponent<IDatePickProps> = (props) => {
   const onChange = (date: Date) => setStartDate(date);
   useEffect(() => {
     props.handlerChange({
-      id: "dateBirth",
+      id: props.id,
       value: props.handlerFormatDate(startDate),
     });
   }, [startDate]);

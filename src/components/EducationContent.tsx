@@ -61,8 +61,8 @@ export const EducationContent: React.FunctionComponent<IEducationContentProps> =
           />
           <DatePick
             title="Год окончания"
-            id="dateBirth"
-            name="dateBirth"
+            id="endingEducation"
+            name="endingEducation"
             handlerChange={actionAdd}
             handlerFormatDate={getStringYear}
             configDatePicker={{
