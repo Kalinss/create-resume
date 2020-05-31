@@ -16,6 +16,11 @@
   }
   &__entryField {
     margin-bottom: 15px;
+    &.full{
+      & input{
+        width: 915px;
+      }
+    }
   }
   &__wantedPosition {
     margin-bottom: 50px;
