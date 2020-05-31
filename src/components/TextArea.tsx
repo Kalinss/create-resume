@@ -6,7 +6,7 @@ export const TextArea: React.FunctionComponent<ITextAreaProps> = (props) => {
     props.handlerChange({ id: props.id, value: e.target.value });
   };
   return (
-    <div className="textArea">
+    <div className={`textArea ${props.class || ""}`}>
       <p className="textArea__title headingInput">{props.title}</p>
       <textarea onChange={onChange} className="textArea__input input" />
     </div>
