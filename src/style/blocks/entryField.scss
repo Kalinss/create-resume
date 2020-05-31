@@ -1,10 +1,13 @@
 .entryField {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  //align-items: center;
   width: 100%;
   &__title {
     font-weight: 600;
+  }
+  &__label {
+    padding-top: 12px;
   }
   &__require {
     font-size: 11px;
@@ -12,5 +15,21 @@
   &__input {
     width: 360px;
     margin-left: 20px;
+  }
+  &__error {
+    margin-top: 5px;
+    padding-left: 30px;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 20px;
+      top: 46%;
+      transform: translateY(-50%);
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: rgba(187, 68, 66, 1);
+    }
   }
 }

@@ -61,7 +61,9 @@ export interface IDatePickProps extends IWrapperComponentFieldProps{
 export interface ITextAreaProps extends IComponentFieldProps{
     handlerChange: IActionFunc;
 }
-export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{}
+export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHandler{
+    validationFunction?:(str:string)=>number;
+}
 export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
 
 export interface IWantedPositionProps extends IWrapperComponentFieldProps{}

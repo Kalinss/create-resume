@@ -8,6 +8,7 @@ import { Telephone } from "./Telephone";
 import { CheckboxList } from "./CheckboxList";
 import { Photo } from "./Photo";
 import { Select } from "./Select";
+import { isNotEmpty, validEmail } from "../utils/validation";
 import "./../style/blocks/mainInfo.scss";
 export const MainInfo: React.FunctionComponent = () => {
   const context = useContext(ResumeContext);
@@ -28,6 +29,7 @@ export const MainInfo: React.FunctionComponent = () => {
             id="familyName"
             required={true}
             class="section__entryField"
+            validationFunction={isNotEmpty}
           />
           <EntryField
             name="name"
@@ -36,6 +38,7 @@ export const MainInfo: React.FunctionComponent = () => {
             id="familyName"
             required={true}
             class="section__entryField"
+            validationFunction={isNotEmpty}
           />
           <EntryField
             name="familyName"
@@ -57,6 +60,7 @@ export const MainInfo: React.FunctionComponent = () => {
             id="email"
             required={true}
             class="section__entryField"
+            validationFunction={validEmail}
           />
           <Telephone handlerChange={actionAdd} class="section__entryField" />
           <CheckboxList
