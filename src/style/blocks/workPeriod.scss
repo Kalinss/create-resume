@@ -1,0 +1,47 @@
+.workPeriod {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  &__title {
+    padding-right: 20px;
+  }
+  &__from {
+    position: relative;
+    &:before {
+      display: block;
+      content: "c";
+      position: absolute;
+      top: 48%;
+      transform: translateY(-50%);
+      left: 10px;
+    }
+  }
+  &__to {
+    position: relative;
+    &:before {
+      display: block;
+      content: "до";
+      position: absolute;
+      top: 48%;
+      transform: translateY(-50%);
+      left: 10px;
+    }
+  }
+  & .datePick {
+    width: 180px;
+  }
+  &__input-box {
+    & .datePick__wrapper {
+      width: 180px;
+      padding: 0 35px;
+      position: relative;
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+    //width: 180px;
+    height: 45px;
+  }
+}
