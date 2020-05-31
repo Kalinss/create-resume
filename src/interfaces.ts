@@ -30,6 +30,9 @@ export interface IButtonProps {
     text:string,
      handlerChange:()=>void
 }
+export interface IDriversLicense {
+    handlerChange: IActionFunc;
+}
 export interface IComponentFieldProps {
   id: string; // store -> [id:...props]
   title?: string; // view name section

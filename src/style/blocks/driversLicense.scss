@@ -1,0 +1,16 @@
+.driversLicense {
+  display: flex;
+  &__title {
+    min-width: 165px;
+    text-align: right;
+  }
+  &__checkbox {
+    & .checkboxList__item {
+      display: flex;
+      align-items: center;
+    }
+    & label {
+      font-weight: 600;
+    }
+  }
+}
