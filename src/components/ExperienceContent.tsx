@@ -4,6 +4,7 @@ import { ResumeContext } from "../store/store";
 import { EntryField } from "./EntryField";
 import { WorkPeriod } from "./WorkPeriod";
 import { TextArea } from "./TextArea";
+import { getDateFromStateMMYYYY } from "../utils/dateFormat";
 
 export const ExperienceContent: React.FunctionComponent<IExperienceContentProps> = (
   props
@@ -27,8 +28,17 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
             id="organization"
             required={false}
             class="section__entryField"
+            initialValue={context.state[`organization${props.counter}`] || ""}
           />
-          <WorkPeriod handlerChange={actionAdd} />
+          <WorkPeriod
+            handlerChange={actionAdd}
+            initialDateFrom={getDateFromStateMMYYYY(
+              context.state[`workPeriodFrom${props.counter}`]
+            )}
+            initialDateTo={getDateFromStateMMYYYY(
+              context.state[`workPeriodTo${props.counter}`]
+            )}
+          />
         </div>
         <div className="education__right right">
           <EntryField
@@ -38,6 +48,7 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
             id="positionJob"
             required={false}
             class="section__entryField"
+            initialValue={context.state[`positionJob${props.counter}`] || ""}
           />
         </div>
       </div>
@@ -48,6 +59,7 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
         id="responsibility"
         required={false}
         class="experience__textArea"
+        initialValue={context.state[`responsibility${props.counter}`] || ""}
       />
     </div>
   );

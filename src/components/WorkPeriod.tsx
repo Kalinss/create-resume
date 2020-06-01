@@ -25,6 +25,7 @@ export const WorkPeriod: React.FunctionComponent<IWorkPeriodProps> = (
           showMonthDropdown: true,
           showYearDropdown: true,
         }}
+        initialDate={props.initialDateFrom}
       />
       <DatePick
         title=""
@@ -40,6 +41,7 @@ export const WorkPeriod: React.FunctionComponent<IWorkPeriodProps> = (
           showMonthDropdown: true,
           showYearDropdown: true,
         }}
+        initialDate={props.initialDateTo}
       />
     </div>
   );

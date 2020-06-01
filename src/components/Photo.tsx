@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toBase64 } from "../utils/toBase64";
 import { IPhotoProps } from "../interfaces";
 import "../style/blocks/photo.scss";
@@ -11,6 +11,7 @@ export const Photo: React.FunctionComponent<IPhotoProps> = (props) => {
       props.handlerChange({ id: "photo", value: base64 });
     });
   };
+
   return (
     <div className={`photo ${props.class || ""}`}>
       <span className="photo__label label">Фото</span>
@@ -18,7 +19,7 @@ export const Photo: React.FunctionComponent<IPhotoProps> = (props) => {
         {
           <img
             className="photo__img"
-            src={code || image}
+            src={props.initialValue || code || image}
             alt="Ваша фотография"
           />
         }

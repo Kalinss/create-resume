@@ -15,6 +15,7 @@ export const DriversLicense: React.FunctionComponent<IDriversLicense> = (
           items={["М", "A", "B", "C", "D", "E", "TM", "TB"]}
           handlerChange={props.handlerChange}
           class="driversLicense__checkbox"
+          initialValue={props.state["driversLicense"]}
         />
       </div>
     </div>

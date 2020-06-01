@@ -23,6 +23,9 @@ export interface IExperienceContentProps {
 export interface IWorkPeriodProps {
     class?:string,
     handlerChange: IActionFunc;
+    state?:any;
+    initialDateFrom:Date,
+    initialDateTo:Date
 }
 export interface IButtonProps {
     disabled:boolean,
@@ -32,6 +35,7 @@ export interface IButtonProps {
 }
 export interface IDriversLicense {
     handlerChange: IActionFunc;
+    state?:any;
 }
 export interface IComponentFieldProps {
   id: string; // store -> [id:...props]
@@ -40,6 +44,7 @@ export interface IComponentFieldProps {
   placeholder?: string;
   name: string; // input name
   class?: string; // props class for BEM
+  initialValue?:string;
 }
 export interface IComponentMainHandler {
   handlerChange: IActionFunc;
@@ -57,6 +62,7 @@ export interface IDatePickProps extends IWrapperComponentFieldProps{
   id: string;
   configDatePicker:expandedReactDatePickerProps,
   handlerFormatDate:(date:Date)=>string,
+  initialDate?:Date;
 }
 export interface ITextAreaProps extends IComponentFieldProps{
     handlerChange: IActionFunc;
@@ -67,11 +73,19 @@ export interface IEntryFieldProps extends IComponentFieldProps,IComponentMainHan
 export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandler{}
 
 export interface IWantedPositionProps extends IWrapperComponentFieldProps{}
-export interface IWantedSalaryProps extends IWrapperComponentFieldProps{}
-export interface ITelephoneProps extends IWrapperComponentFieldProps{}
-export interface IPhotoProps extends IWrapperComponentFieldProps{}
-
-
+export interface IWantedSalaryProps extends IWrapperComponentFieldProps{
+    state?:any;
+}
+export interface ITelephoneProps extends IWrapperComponentFieldProps{
+    state?:any;
+}
+export interface IPhotoProps extends IWrapperComponentFieldProps{
+    initialValue?:string;
+}
 export interface ISelectProps extends ICatalogComponentProps,IComponentMainHandler{}
-export interface ICheckboxlistProps extends ICatalogComponentProps,IComponentMainHandler{}
-export interface IRadioList extends ICatalogComponentProps,IComponentMainHandler{}
+export interface ICheckboxlistProps extends ICatalogComponentProps,IComponentMainHandler{
+    initialValue?:string;
+}
+export interface IRadioList extends ICatalogComponentProps,IComponentMainHandler{
+    initialValue?:string;
+}

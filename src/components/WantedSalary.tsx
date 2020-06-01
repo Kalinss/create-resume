@@ -7,7 +7,9 @@ import "./../style/blocks/wantedSalary.scss";
 export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
   props
 ) => {
-  const [option, setOption] = useState<string>("рублей");
+  const [option, setOption] = useState<string>(
+    props.state["currency"] || "рублей"
+  );
   const onChange = (info: IActionAdd) => {
     props.handlerChange({ id: info.id, value: `${info.value} ${option}` });
   };
@@ -22,6 +24,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
         placeholder="100000"
         handlerChange={onChange}
         class="wantedSalary__entryField"
+        initialValue={props.state["salary"]}
       />
       <Select
         name=""
@@ -41,6 +44,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
         handlerChange={(inf: IActionAdd) => {
           setOption(inf.value);
         }}
+        initialValue={props.state["currency"]}
       />
     </div>
   );

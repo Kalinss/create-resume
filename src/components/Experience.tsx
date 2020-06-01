@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "./Button";
 import "./../style/blocks/experience.scss";
 import { ExperienceContent } from "./ExperienceContent";
 import { EducationContent } from "./EducationContent";
+import { ResumeContext } from "../store/store";
+import { IActionAdd } from "../interfaces";
 
 export const Experience: React.FunctionComponent = () => {
   const [counterArray, setCounter] = useState([0]);
+  const context = useContext(ResumeContext);
+  const actionAdd = (info: IActionAdd): void => {
+    context.dispatch({
+      type: "add",
+      id: info.id,
+      value: info.value,
+    });
+  };
+  useEffect(() => {
+    actionAdd({ id: "counterExperience", value: counterArray.join(".") });
+  }, [counterArray]);
+  useEffect(() => {
+    setCounter(context.state["counterEducation"].split("."));
+  }, []);
   const handlerDelete = () => {
     const newCounterArray = counterArray;
     newCounterArray.pop();

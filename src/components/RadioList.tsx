@@ -14,6 +14,7 @@ export const RadioList: React.FunctionComponent<IRadioList> = (props) => {
             <div key={i} className="radioList__item">
               <label htmlFor={item}>
                 <input
+                  checked={item === props.initialValue}
                   onChange={onChange}
                   id={item}
                   name={props.name}

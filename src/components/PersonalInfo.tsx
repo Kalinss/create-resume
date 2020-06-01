@@ -7,7 +7,10 @@ import { Select } from "./Select";
 import { RadioList } from "./RadioList";
 import { CheckboxList } from "./CheckboxList";
 import { DatePick } from "./DatePick";
-import { getStringDDMMYYYY } from "../utils/dateFormat";
+import {
+  getDateFromStateDDMMYYYY,
+  getStringDDMMYYYY,
+} from "../utils/dateFormat";
 import ru from "date-fns/locale/ru";
 
 export const PersonalInfo: React.FunctionComponent = () => {
@@ -29,6 +32,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             id="city"
             required={false}
             class="section__entryField"
+            initialValue={context.state["city"]}
           />
           <Select
             name="Гражданство"
@@ -64,6 +68,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
               showMonthDropdown: true,
               showYearDropdown: true,
             }}
+            initialDate={getDateFromStateDDMMYYYY(context.state["dateBirth"])}
           />
         </div>
         <div className="personalInfo__right right">
@@ -81,6 +86,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             handlerChange={actionAdd}
             items={["Мужской", "Женский"]}
             class="personalInfo__gender"
+            initialValue={context.state["gender"]}
           />
           <Select
             name="Семейное положение"
@@ -95,6 +101,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             items={["Есть дети"]}
             handlerChange={actionAdd}
             class="personalInfo__children"
+            initialValue={context.state["children"]}
           />
         </div>
       </div>

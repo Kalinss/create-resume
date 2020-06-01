@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { EntryField } from "./EntryField";
 import { ResumeContext } from "../store/store";
 import { IWantedPositionProps } from "../interfaces";
@@ -7,8 +7,8 @@ import "./../style/blocks/wantedProsition.scss";
 export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
   props
 ) => {
+  const checkboxRef = useRef<HTMLInputElement>(null);
   const context = useContext(ResumeContext);
-
   const handlerClickCheckbox = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -18,7 +18,9 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
       value: e.target.checked,
     });
   };
-
+  useEffect(() => {
+    checkboxRef.current!.checked = context.state["bussinessTrip"];
+  }, []);
   return (
     <div className={`wantedPosition ${props.class || ""}`}>
       <EntryField
@@ -28,12 +30,14 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
         placeholder=""
         id="wantedPosition"
         handlerChange={props.handlerChange}
+        initialValue={context.state["wantedPosition"]}
       />
       <div className="wantedPosition__checkbox">
         <input
           id="businessTrip"
           onChange={handlerClickCheckbox}
           type="checkbox"
+          ref={checkboxRef}
         />
         <label className="label">Готовность к командировкам</label>
       </div>

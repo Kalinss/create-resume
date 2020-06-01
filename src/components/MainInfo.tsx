@@ -30,6 +30,7 @@ export const MainInfo: React.FunctionComponent = () => {
             required={true}
             class="section__entryField"
             validationFunction={isNotEmpty}
+            initialValue={context.state["familyName"]}
           />
           <EntryField
             name="name"
@@ -39,20 +40,26 @@ export const MainInfo: React.FunctionComponent = () => {
             required={true}
             class="section__entryField"
             validationFunction={isNotEmpty}
+            initialValue={context.state["name"]}
           />
           <EntryField
-            name="familyName"
+            name="surname"
             title="Отчество"
             handlerChange={actionAdd}
-            id="familyName"
+            id="surname"
             required={false}
             class="section__entryField"
+            initialValue={context.state["surname"]}
           />
           <WantedPosition
             handlerChange={actionAdd}
             class="section__wantedPosition"
           />
-          <WantedSalary handlerChange={actionAdd} class="section__entryField" />
+          <WantedSalary
+            handlerChange={actionAdd}
+            class="section__entryField"
+            state={context.state}
+          />
           <EntryField
             name="email"
             title="Почта"
@@ -61,18 +68,28 @@ export const MainInfo: React.FunctionComponent = () => {
             required={true}
             class="section__entryField"
             validationFunction={validEmail}
+            initialValue={context.state["email"]}
           />
-          <Telephone handlerChange={actionAdd} class="section__entryField" />
+          <Telephone
+            handlerChange={actionAdd}
+            class="section__entryField"
+            state={context.state}
+          />
           <CheckboxList
             id="messengers"
             name="messengers"
             class="mainInfo__telephone"
             handlerChange={actionAdd}
             items={["Viber", "Telegram", "Whatsapp"]}
+            initialValue={context.state["messengers"] || ""}
           />
         </div>
         <div className="mainInfo__right right">
-          <Photo handlerChange={actionAdd} class="section__photo" />
+          <Photo
+            handlerChange={actionAdd}
+            class="section__photo"
+            initialValue={context.state["photo"]}
+          />
           <Select
             name="Занятость"
             id="busyness"
@@ -85,6 +102,7 @@ export const MainInfo: React.FunctionComponent = () => {
               "Волонтёрство",
             ]}
             handlerChange={actionAdd}
+            initialValue={context.state["busyness"]}
           />
           <Select
             name="График работы"
@@ -98,6 +116,7 @@ export const MainInfo: React.FunctionComponent = () => {
               "Вахтовый метод",
             ]}
             handlerChange={actionAdd}
+            initialValue={context.state["schedule"]}
           />
         </div>
       </div>

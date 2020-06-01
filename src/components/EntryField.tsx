@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { IEntryFieldProps } from "../interfaces";
 import "./../style/blocks/entryField.scss";
 import { getErrorValidation } from "../utils/validation";
@@ -7,7 +7,7 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
 ) => {
   const [error, setError] = useState("");
   const [positive, setPositive] = useState(false);
-
+  const inputRef = useRef<HTMLInputElement>(null);
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     if (props.validationFunction && props.required) {
       const codeError = props.validationFunction(e.target.value);
@@ -28,7 +28,11 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
       value: e.target.value,
     });
   };
-
+  useEffect(() => {
+    if (props.initialValue) {
+      inputRef.current!.defaultValue = props.initialValue;
+    }
+  }, []);
   return (
     <div className={`entryField ${props.class || ""}`}>
       <label className="entryField__label label" id={props.id}>
@@ -45,6 +49,7 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
           ${error ? "error" : ""} 
           ${positive ? "positive" : ""}
             `}
+          ref={inputRef}
           name={props.name}
           id={props.id}
           placeholder={props.placeholder}

@@ -44,14 +44,16 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
           "+996",
           "+998",
         ]}
+        initialValue={props.state["tel"]}
       />
       <EntryField
         required={false}
         name="tepelphone"
-        id=""
+        id="tepelphone"
         handlerChange={onChange}
         placeholder=""
         class="tel__entryField"
+        initialValue={props.state["telephone"]}
       />
     </div>
   );

@@ -23,14 +23,16 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         id="language"
         required={false}
         class="section__entryField full"
+        initialValue={context.state["language"]}
       />
-      <DriversLicense handlerChange={actionAdd} />
+      <DriversLicense handlerChange={actionAdd} state={context.state} />
       <CheckboxList
         id="medicalBook"
         name="medicalBook"
         items={["Медицинская книжка"]}
         handlerChange={actionAdd}
         class="addInfo__medicalBook"
+        initialValue={context.state["medicalBook"]}
       />
       <TextArea
         name="addInfo"
@@ -39,6 +41,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         id="addInfo"
         required={false}
         class="addInfo__textArea"
+        initialValue={context.state["addInfo"]}
       />
       <TextArea
         name="links"
@@ -47,6 +50,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         id="links"
         required={false}
         class="addInfo__textArea"
+        initialValue={context.state["links"]}
       />
       <CreateLink />
     </div>

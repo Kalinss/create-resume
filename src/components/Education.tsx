@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./../style/blocks/education.scss";
-
 import { EducationContent } from "./EducationContent";
 import { Button } from "./Button";
+import { ResumeContext } from "../store/store";
+import { IActionAdd } from "../interfaces";
 
 export const Education: React.FunctionComponent = () => {
   const [counterArray, setCounter] = useState([0]);
+  const context = useContext(ResumeContext);
+  const actionAdd = (info: IActionAdd): void => {
+    context.dispatch({
+      type: "add",
+      id: info.id,
+      value: info.value,
+    });
+  };
   const handlerDelete = () => {
     const newCounterArray = counterArray;
     newCounterArray.pop();
     setCounter([...newCounterArray]);
   };
   const handlerAdd = () => setCounter([...counterArray, counterArray.length]);
+  useEffect(() => {
+    actionAdd({ id: "counterEducation", value: counterArray.join(".") });
+  }, [counterArray]);
+  useEffect(() => {
+    setCounter(context.state["counterEducation"].split("."));
+  }, []);
   return (
     <div className="education section">
       <h2>Образование</h2>
