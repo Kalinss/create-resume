@@ -3,13 +3,15 @@ import { Select } from "./Select";
 import { EntryField } from "./EntryField";
 import { ITelephoneProps } from "../interfaces";
 import "./../style/blocks/telephone.scss";
+import { TelephoneDefaultProps } from "./defaultProps";
 
 export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
+  Telephone.defaultProps = TelephoneDefaultProps;
+
   const [code, setCode] = useState("+7");
   const [tel, setTel] = useState("");
 
   const onSelect = (result: { id: string; value: string }) => {
-    // TODO validate
     setCode(result.value);
     if (tel) {
       // if tel not empty or validate true
@@ -44,7 +46,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
           "+996",
           "+998",
         ]}
-        initialValue={props.state["tel"]}
+        initialValue={props.state!["tel"]}
       />
       <EntryField
         required={false}
@@ -53,7 +55,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
         handlerChange={onChange}
         placeholder=""
         class="tel__entryField"
-        initialValue={props.state["telephone"]}
+        initialValue={props.state!["telephone"]}
       />
     </div>
   );

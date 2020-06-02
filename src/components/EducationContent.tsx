@@ -11,6 +11,7 @@ import { getDateFromStateYYYY } from "../utils/dateFormat";
 export const EducationContent: React.FunctionComponent<IEducationContentProps> = (
   props
 ) => {
+
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({
@@ -19,6 +20,7 @@ export const EducationContent: React.FunctionComponent<IEducationContentProps> =
       value: info.value,
     });
   };
+
   return (
     <div className={props.class || ""}>
       <EntryField

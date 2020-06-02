@@ -1,5 +1,6 @@
 import {ReactNode} from "react";
 import {ReactDatePickerProps} from "react-datepicker";
+import {InitialStateInterface} from "./store/initialState.interface";
 
 export interface expandedReactDatePickerProps extends ReactDatePickerProps{
     yearsOnly?:boolean
@@ -23,7 +24,7 @@ export interface IExperienceContentProps {
 export interface IWorkPeriodProps {
     class?:string,
     handlerChange: IActionFunc;
-    state?:any;
+    state?:InitialStateInterface;
     initialDateFrom:Date,
     initialDateTo:Date
 }
@@ -31,11 +32,11 @@ export interface IButtonProps {
     disabled:boolean,
     class?:string,
     text:string,
-     handlerChange:()=>void
+    handlerChange:()=>void
 }
 export interface IDriversLicense {
     handlerChange: IActionFunc;
-    state?:any;
+    state?:InitialStateInterface;
 }
 export interface IComponentFieldProps {
   id: string; // store -> [id:...props]
@@ -74,10 +75,10 @@ export interface IDatePickProps extends IComponentFieldProps,IComponentMainHandl
 
 export interface IWantedPositionProps extends IWrapperComponentFieldProps{}
 export interface IWantedSalaryProps extends IWrapperComponentFieldProps{
-    state?:any;
+    state?:InitialStateInterface;
 }
 export interface ITelephoneProps extends IWrapperComponentFieldProps{
-    state?:any;
+    state?:InitialStateInterface;
 }
 export interface IPhotoProps extends IWrapperComponentFieldProps{
     initialValue?:string;

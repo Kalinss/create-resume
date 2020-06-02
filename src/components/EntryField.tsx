@@ -2,12 +2,17 @@ import React, { useEffect, useState, useRef } from "react";
 import { IEntryFieldProps } from "../interfaces";
 import "./../style/blocks/entryField.scss";
 import { getErrorValidation } from "../utils/validation";
+import { EntryFieldDefaultProps } from "./defaultProps";
+
 export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
   props
 ) => {
+  EntryField.defaultProps = EntryFieldDefaultProps;
+
   const [error, setError] = useState("");
   const [positive, setPositive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     if (props.validationFunction && props.required) {
       const codeError = props.validationFunction(e.target.value);
@@ -22,19 +27,22 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
       return;
     }
   };
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     props.handlerChange({
       id: props.id,
       value: e.target.value,
     });
   };
+
   useEffect(() => {
     if (props.initialValue) {
       inputRef.current!.defaultValue = props.initialValue;
     }
   }, []);
+
   return (
-    <div className={`entryField ${props.class || ""}`}>
+    <div className={`entryField ${props.class}`}>
       <label className="entryField__label label" id={props.id}>
         {props.title && (
           <span className="entryField__title">{props.title}</span>

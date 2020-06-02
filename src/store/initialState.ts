@@ -1,4 +1,6 @@
-export const initialState: object = {
+import {InitialStateInterface} from "./initialState.interface";
+
+export const initialState: InitialStateInterface = {
   familyName: "",
   name: "",
   surname: "",

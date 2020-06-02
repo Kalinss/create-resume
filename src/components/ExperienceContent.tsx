@@ -9,7 +9,9 @@ import { getDateFromStateMMYYYY } from "../utils/dateFormat";
 export const ExperienceContent: React.FunctionComponent<IExperienceContentProps> = (
   props
 ) => {
+
   const context = useContext(ResumeContext);
+
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({
       type: "add",
@@ -17,6 +19,7 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
       value: info.value,
     });
   };
+
   return (
     <div className={props.class || ""}>
       <div className="experience__wrapper-content">

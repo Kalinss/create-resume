@@ -5,7 +5,8 @@ import "../style/blocks/driversLicense.scss";
 export const DriversLicense: React.FunctionComponent<IDriversLicense> = (
   props
 ) => {
-  return (
+
+    return (
     <div className="driversLicense">
       <p className="driversLicense__title headingInput">Водительские права</p>
       <div className="driversLicense__wrapper">
@@ -15,7 +16,7 @@ export const DriversLicense: React.FunctionComponent<IDriversLicense> = (
           items={["М", "A", "B", "C", "D", "E", "TM", "TB"]}
           handlerChange={props.handlerChange}
           class="driversLicense__checkbox"
-          initialValue={props.state["driversLicense"]}
+          initialValue={props.state!["driversLicense"]}
         />
       </div>
     </div>

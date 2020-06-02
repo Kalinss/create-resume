@@ -7,6 +7,7 @@ import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
 
 export const Experience: React.FunctionComponent = () => {
+
   const [counterArray, setCounter] = useState([0]);
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
@@ -16,18 +17,23 @@ export const Experience: React.FunctionComponent = () => {
       value: info.value,
     });
   };
+
   useEffect(() => {
     actionAdd({ id: "counterExperience", value: counterArray.join(".") });
   }, [counterArray]);
+
   useEffect(() => {
     setCounter(context.state["counterEducation"].split("."));
   }, []);
+
   const handlerDelete = () => {
     const newCounterArray = counterArray;
     newCounterArray.pop();
     setCounter([...newCounterArray]);
   };
+
   const handlerAdd = () => setCounter([...counterArray, counterArray.length]);
+
   return (
     <div className="experience section">
       <h2>Опыт работы</h2>

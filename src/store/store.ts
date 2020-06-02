@@ -1,10 +1,10 @@
 import { createContext } from "react";
-
+import {InitialStateInterface} from "./initialState.interface";
 //TODO: any
 export const ResumeContext = createContext<any>(null);
 
 // TODO: types
-export const reducers = (state: any, action: any): any => {
+export const reducers = (state: InitialStateInterface, action: any) => {
   switch (action.type) {
     case "add":
       return {

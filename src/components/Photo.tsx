@@ -3,8 +3,12 @@ import { toBase64 } from "../utils/toBase64";
 import { IPhotoProps } from "../interfaces";
 import "../style/blocks/photo.scss";
 import image from "../images/av_160_160.jpg";
+import { PhotoDefaultProps } from "./defaultProps";
 export const Photo: React.FunctionComponent<IPhotoProps> = (props) => {
+  Photo.defaultProps = PhotoDefaultProps;
+
   const [code, setCode] = useState<string>("");
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     toBase64(e.currentTarget, (base64: string) => {
       setCode(base64);

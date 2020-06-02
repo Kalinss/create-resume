@@ -4,8 +4,10 @@ import { Button } from "./Button";
 import { ResumeContext } from "../store/store";
 
 export const CreateLink = () => {
+
   const context = useContext(ResumeContext);
   const [disabled, setDisabled] = useState(true);
+
   useEffect(() => {
     if (context.state.familyName && context.state.name && context.state.email) {
       setDisabled(false);
@@ -13,6 +15,7 @@ export const CreateLink = () => {
       setDisabled(true);
     }
   });
+
   return (
     <div className="createLink">
       <Link to="/****">

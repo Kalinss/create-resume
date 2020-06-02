@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
-import { EntryField } from "./EntryField";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
-import { WantedPosition } from "./WantedPosition";
-import { WantedSalary } from "./WantedSalary";
-import { Telephone } from "./Telephone";
-import { CheckboxList } from "./CheckboxList";
-import { Photo } from "./Photo";
-import { Select } from "./Select";
 import { isNotEmpty, validEmail } from "../utils/validation";
+import {
+  EntryField,
+  WantedPosition,
+  WantedSalary,
+  Telephone,
+  CheckboxList,
+  Photo,
+  Select,
+} from "./index";
 import "./../style/blocks/mainInfo.scss";
-export const MainInfo: React.FunctionComponent = () => {
-  const context = useContext(ResumeContext);
 
+export const MainInfo: React.FunctionComponent = () => {
+
+  const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({ type: "add", id: info.id, value: info.value });
   };
@@ -32,6 +35,7 @@ export const MainInfo: React.FunctionComponent = () => {
             validationFunction={isNotEmpty}
             initialValue={context.state["familyName"]}
           />
+
           <EntryField
             name="name"
             title="Имя"
@@ -42,6 +46,7 @@ export const MainInfo: React.FunctionComponent = () => {
             validationFunction={isNotEmpty}
             initialValue={context.state["name"]}
           />
+
           <EntryField
             name="surname"
             title="Отчество"
@@ -51,15 +56,18 @@ export const MainInfo: React.FunctionComponent = () => {
             class="section__entryField"
             initialValue={context.state["surname"]}
           />
+
           <WantedPosition
             handlerChange={actionAdd}
             class="section__wantedPosition"
           />
+
           <WantedSalary
             handlerChange={actionAdd}
             class="section__entryField"
             state={context.state}
           />
+
           <EntryField
             name="email"
             title="Почта"
@@ -81,7 +89,7 @@ export const MainInfo: React.FunctionComponent = () => {
             class="mainInfo__telephone"
             handlerChange={actionAdd}
             items={["Viber", "Telegram", "Whatsapp"]}
-            initialValue={context.state["messengers"] || ""}
+            initialValue={context.state["messengers"]}
           />
         </div>
         <div className="mainInfo__right right">

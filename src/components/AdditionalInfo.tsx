@@ -25,7 +25,9 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="section__entryField full"
         initialValue={context.state["language"]}
       />
+
       <DriversLicense handlerChange={actionAdd} state={context.state} />
+
       <CheckboxList
         id="medicalBook"
         name="medicalBook"
@@ -34,6 +36,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="addInfo__medicalBook"
         initialValue={context.state["medicalBook"]}
       />
+
       <TextArea
         name="addInfo"
         title="Дополнительная информация"
@@ -43,6 +46,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="addInfo__textArea"
         initialValue={context.state["addInfo"]}
       />
+
       <TextArea
         name="links"
         title="Ссылки"
