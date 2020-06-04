@@ -5,8 +5,7 @@ import "../style/blocks/driversLicense.scss";
 export const DriversLicense: React.FunctionComponent<IDriversLicense> = (
   props
 ) => {
-
-    return (
+  return (
     <div className="driversLicense">
       <p className="driversLicense__title headingInput">Водительские права</p>
       <div className="driversLicense__wrapper">

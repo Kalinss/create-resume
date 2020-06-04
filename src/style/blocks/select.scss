@@ -4,5 +4,11 @@
   & select {
     width: 360px;
     margin-left: 20px;
+    & option{
+      &:focus
+      {
+        outline: none;
+      }
+    }
   }
 }

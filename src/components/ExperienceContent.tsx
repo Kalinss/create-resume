@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import { IActionAdd, IExperienceContentProps } from "../interfaces";
 import { ResumeContext } from "../store/store";
-import { EntryField } from "./EntryField";
-import { WorkPeriod } from "./WorkPeriod";
-import { TextArea } from "./TextArea";
+import { TextArea, EntryField, WorkPeriod } from "./index";
 import { getDateFromStateMMYYYY } from "../utils/dateFormat";
 
 export const ExperienceContent: React.FunctionComponent<IExperienceContentProps> = (
   props
 ) => {
-
   const context = useContext(ResumeContext);
 
   const actionAdd = (info: IActionAdd): void => {

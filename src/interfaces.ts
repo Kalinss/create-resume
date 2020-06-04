@@ -90,3 +90,13 @@ export interface ICheckboxlistProps extends ICatalogComponentProps,IComponentMai
 export interface IRadioList extends ICatalogComponentProps,IComponentMainHandler{
     initialValue?:string;
 }
+export interface ICreateLinkProps {
+    link:string,
+    text:string
+    colorClass:string
+    state:InitialStateInterface
+}
+
+export interface ITemplate {
+    state:InitialStateInterface;
+}

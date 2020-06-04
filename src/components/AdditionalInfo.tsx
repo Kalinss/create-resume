@@ -1,19 +1,21 @@
 import React, { useContext } from "react";
-import { EntryField } from "./EntryField";
+import {
+  EntryField,
+  CheckboxList,
+  DriversLicense,
+  TextArea,
+  CreateLink,
+} from "./index";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
-import { CheckboxList } from "./CheckboxList";
-import { DriversLicense } from "./DriversLicense";
 import "../style/blocks/addInfo.scss";
-import { TextArea } from "./TextArea";
-import { CreateLink } from "./CreateLink";
 
 export const AdditionalInfo: React.FunctionComponent = () => {
   const context = useContext(ResumeContext);
-
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({ type: "add", id: info.id, value: info.value });
   };
+
   return (
     <div className="addInfo section">
       <EntryField
@@ -56,7 +58,8 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="addInfo__textArea"
         initialValue={context.state["links"]}
       />
-      <CreateLink />
+
+      <CreateLink link="/view/1" colorClass="green" text="Cоздать резюме" state={context.state} />
     </div>
   );
 };

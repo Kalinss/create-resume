@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button } from "./Button";
+import { Button, ExperienceContent } from "./index";
 import "./../style/blocks/experience.scss";
-import { ExperienceContent } from "./ExperienceContent";
-import { EducationContent } from "./EducationContent";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
 
 export const Experience: React.FunctionComponent = () => {
-
   const [counterArray, setCounter] = useState([0]);
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
@@ -23,14 +20,11 @@ export const Experience: React.FunctionComponent = () => {
   }, [counterArray]);
 
   useEffect(() => {
-    setCounter(context.state["counterEducation"].split("."));
+    setCounter(context.state["counterExperience"].split("."));
   }, []);
 
-  const handlerDelete = () => {
-    const newCounterArray = counterArray;
-    newCounterArray.pop();
-    setCounter([...newCounterArray]);
-  };
+  const handlerDelete = () =>
+    setCounter(counterArray.filter((_, i) => i !== counterArray.length - 1));
 
   const handlerAdd = () => setCounter([...counterArray, counterArray.length]);
 

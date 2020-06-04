@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
-import { ResumeContext } from "../store/store";
+import {ICreateLinkProps} from "../interfaces";
 
-export const CreateLink = () => {
+export const CreateLink:React.FunctionComponent<ICreateLinkProps> = (props) => {
 
-  const context = useContext(ResumeContext);
+  const context = props.state;
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    if (context.state.familyName && context.state.name && context.state.email) {
+    if (context.familyName && context.name && context.email) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -18,12 +18,12 @@ export const CreateLink = () => {
 
   return (
     <div className="createLink">
-      <Link to="/****">
+      <Link to={props.link}>
         <Button
-          text="Создать резюме"
+          text={props.text}
           handlerChange={() => {}}
           disabled={disabled}
-          class="green createLink__button"
+          class={`${props.colorClass} createLink__button`}
         />
       </Link>
     </div>

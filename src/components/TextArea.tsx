@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { ITextAreaProps } from "../interfaces";
+import { TextAreaDefaultProps } from "./defaultProps";
 import "../style/blocks/textArea.scss";
-import {TextAreaDefaultProps} from "./defaultProps";
+
+const createLineFeed = (str: string) => str.replace(/(?:\r\n|\r|\n)/g, "$$$");
+
 export const TextArea: React.FunctionComponent<ITextAreaProps> = (props) => {
   TextArea.defaultProps = TextAreaDefaultProps;
 
@@ -13,16 +16,20 @@ export const TextArea: React.FunctionComponent<ITextAreaProps> = (props) => {
     }
   }, []);
 
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    props.handlerChange({ id: props.id, value: e.target.value });
+  const onBlur = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    props.handlerChange({
+      id: props.id,
+      value: createLineFeed(e.target.value),
+    });
   };
 
   return (
     <div className={`textArea ${props.class}`}>
       <p className="textArea__title headingInput">{props.title}</p>
       <textarea
+        onBlur={onBlur}
+        wrap="soft"
         ref={textAreaRef}
-        onChange={onChange}
         className="textArea__input input"
       />
     </div>

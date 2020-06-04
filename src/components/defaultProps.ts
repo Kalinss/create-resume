@@ -53,6 +53,7 @@ export const SelectDefaultProps = {
 }
 
 export const TextAreaDefaultProps = {
+    initialValue:'',
     ...FieldDefaultProps,
 }
 

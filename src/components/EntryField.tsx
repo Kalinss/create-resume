@@ -23,12 +23,8 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
         setError("");
         setPositive(true);
       }
-    } else {
-      return;
     }
-  };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     props.handlerChange({
       id: props.id,
       value: e.target.value,
@@ -62,9 +58,6 @@ export const EntryField: React.FunctionComponent<IEntryFieldProps> = (
           id={props.id}
           placeholder={props.placeholder}
           onBlur={onBlur}
-          onChange={(e) => {
-            onChange(e);
-          }}
           type="text"
         />
         {error && <p className="entryField__error">{error}</p>}

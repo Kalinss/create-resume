@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import { EntryField } from "./EntryField";
-import { Select } from "./Select";
-import { DatePick } from "./DatePick";
+import { EntryField, Select, DatePick } from "./index";
 import { getStringYear } from "../utils/dateFormat";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
@@ -11,7 +9,6 @@ import { getDateFromStateYYYY } from "../utils/dateFormat";
 export const EducationContent: React.FunctionComponent<IEducationContentProps> = (
   props
 ) => {
-
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({

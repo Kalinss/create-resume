@@ -2,11 +2,7 @@ import React, { useContext } from "react";
 import "../style/blocks/personalInfo.scss";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
-import { EntryField } from "./EntryField";
-import { Select } from "./Select";
-import { RadioList } from "./RadioList";
-import { CheckboxList } from "./CheckboxList";
-import { DatePick } from "./DatePick";
+import { EntryField,Select,RadioList,CheckboxList,DatePick } from "./index";
 import {
   getDateFromStateDDMMYYYY,
   getStringDDMMYYYY,
@@ -25,6 +21,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
       <h2>Личная информация</h2>
       <div className="section__wrapper">
         <div className="personalInfo__left left">
+
           <EntryField
             name="city"
             title="Город проживаня"
@@ -34,6 +31,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             class="section__entryField"
             initialValue={context.state["city"]}
           />
+
           <Select
             name="Гражданство"
             id="nationality"
@@ -55,6 +53,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             ]}
             handlerChange={actionAdd}
           />
+
           <DatePick
             title="Год рождения"
             id="dateBirth"
@@ -71,6 +70,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             initialDate={getDateFromStateDDMMYYYY(context.state["dateBirth"])}
           />
         </div>
+
         <div className="personalInfo__right right">
           <Select
             name="Переезд"
@@ -79,6 +79,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             items={["Невозможен", "Возможен", "Нежелателен", "Желателен"]}
             handlerChange={actionAdd}
           />
+
           <RadioList
             title="Пол"
             id="gender"
@@ -88,6 +89,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             class="personalInfo__gender"
             initialValue={context.state["gender"]}
           />
+
           <Select
             name="Семейное положение"
             id="family"
@@ -95,6 +97,7 @@ export const PersonalInfo: React.FunctionComponent = () => {
             items={["Холост / Не замужем", "Женат / Замужем"]}
             handlerChange={actionAdd}
           />
+
           <CheckboxList
             id="children"
             name="children"

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Constructor } from "./pages/Constructor";
 import { Page } from "./pages/Page";
 import "react-datepicker/dist/react-datepicker.css";
+import  {ViewResume} from "./pages/ViewResume";
 
 const App: React.FunctionComponent = () => {
   const [state, dispatch] = useReducer(reducers, initialState);
@@ -13,6 +14,11 @@ const App: React.FunctionComponent = () => {
     <Router>
       <ResumeContext.Provider value={{ state, dispatch }}>
         <Switch>
+          <Route path='/view'>
+            <Page>
+              <ViewResume/>
+            </Page>
+          </Route>
           <Route path="/">
             <Page>
               <Constructor />

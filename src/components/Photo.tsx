@@ -4,6 +4,7 @@ import { IPhotoProps } from "../interfaces";
 import "../style/blocks/photo.scss";
 import image from "../images/av_160_160.jpg";
 import { PhotoDefaultProps } from "./defaultProps";
+
 export const Photo: React.FunctionComponent<IPhotoProps> = (props) => {
   Photo.defaultProps = PhotoDefaultProps;
 
@@ -17,7 +18,7 @@ export const Photo: React.FunctionComponent<IPhotoProps> = (props) => {
   };
 
   return (
-    <div className={`photo ${props.class || ""}`}>
+    <div className={`photo ${props.class}`}>
       <span className="photo__label label">Фото</span>
       <div className="photo__wrapper">
         {

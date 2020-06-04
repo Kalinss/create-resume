@@ -1,30 +1,30 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { ICheckboxlistProps } from "../interfaces";
+import { CheckboxListDefaultProps } from "./defaultProps";
 import "./../style/blocks/checkboxList.scss";
-import {CheckboxListDefaultProps} from "./defaultProps";
+
 export const CheckboxList: React.FunctionComponent<ICheckboxlistProps> = (
   props
 ) => {
   CheckboxList.defaultProps = CheckboxListDefaultProps;
 
-  const initialChecked = props.initialValue;
+  const checkedArray = props.initialValue!.split(",");
   const [checkboxList, setCheckboxList] = useState<string[]>([]);
-  const checkedArray = initialChecked!.split(",");
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let newCheckbox = checkboxList;
     if (e.target.checked) {
-      newCheckbox.push(e.target.id);
-      setCheckboxList(newCheckbox);
+      setCheckboxList([...checkboxList, e.target.id]);
     } else {
-      newCheckbox = newCheckbox.filter((item) => item !== e.target.id);
-      setCheckboxList(newCheckbox);
+      setCheckboxList(checkboxList.filter((item) => item !== e.target.id));
     }
+  };
+
+  useEffect(() => {
     props.handlerChange({
       id: props.id,
-      value: newCheckbox.join(",").trim(),
+      value: checkboxList.join(",").trim(),
     });
-  };
+  }, [checkboxList]);
 
   useEffect(() => {
     if (props.initialValue) {

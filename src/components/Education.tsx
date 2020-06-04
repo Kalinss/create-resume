@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./../style/blocks/education.scss";
-import { EducationContent } from "./EducationContent";
-import { Button } from "./Button";
+import { EducationContent, Button } from "./index";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
 
 export const Education: React.FunctionComponent = () => {
-
   const [counterArray, setCounter] = useState([0]);
+
   const context = useContext(ResumeContext);
+
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({
       type: "add",
@@ -17,11 +17,8 @@ export const Education: React.FunctionComponent = () => {
     });
   };
 
-  const handlerDelete = () => {
-    const newCounterArray = counterArray;
-    newCounterArray.pop();
-    setCounter([...newCounterArray]);
-  };
+  const handlerDelete = () =>
+    setCounter(counterArray.filter((_, i) => i !== counterArray.length - 1));
 
   const handlerAdd = () => setCounter([...counterArray, counterArray.length]);
 

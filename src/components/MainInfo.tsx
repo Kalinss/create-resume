@@ -14,7 +14,6 @@ import {
 import "./../style/blocks/mainInfo.scss";
 
 export const MainInfo: React.FunctionComponent = () => {
-
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({ type: "add", id: info.id, value: info.value });
@@ -78,11 +77,13 @@ export const MainInfo: React.FunctionComponent = () => {
             validationFunction={validEmail}
             initialValue={context.state["email"]}
           />
+
           <Telephone
             handlerChange={actionAdd}
             class="section__entryField"
             state={context.state}
           />
+
           <CheckboxList
             id="messengers"
             name="messengers"
@@ -92,12 +93,14 @@ export const MainInfo: React.FunctionComponent = () => {
             initialValue={context.state["messengers"]}
           />
         </div>
+
         <div className="mainInfo__right right">
           <Photo
             handlerChange={actionAdd}
             class="section__photo"
             initialValue={context.state["photo"]}
           />
+
           <Select
             name="Занятость"
             id="busyness"
@@ -112,6 +115,7 @@ export const MainInfo: React.FunctionComponent = () => {
             handlerChange={actionAdd}
             initialValue={context.state["busyness"]}
           />
+
           <Select
             name="График работы"
             id="schedule"

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { ISelectProps } from "../interfaces";
 import "./../style/blocks/select.scss";
 import { SelectDefaultProps } from "./defaultProps";
+
 export const Select: React.FunctionComponent<ISelectProps> = (props) => {
   Select.defaultProps = SelectDefaultProps;
 
@@ -23,7 +24,7 @@ export const Select: React.FunctionComponent<ISelectProps> = (props) => {
   }, []);
 
   return (
-    <div className={`select ${props.class || ""}`}>
+    <div className={`select ${props.class}`}>
       <label className="headingInput">{props.name}</label>
       <select
         className="input"

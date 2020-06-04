@@ -26,7 +26,7 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
   }, []);
 
   return (
-    <div className={`wantedPosition ${props.class || ""}`}>
+    <div className={`wantedPosition ${props.class}`}>
       <EntryField
         title="Должность"
         name="wantedPosition"
@@ -37,13 +37,18 @@ export const WantedPosition: React.FunctionComponent<IWantedPositionProps> = (
         initialValue={context.state["wantedPosition"]}
       />
       <div className="wantedPosition__checkbox">
-        <input
-          id="businessTrip"
-          onChange={handlerClickCheckbox}
-          type="checkbox"
-          ref={checkboxRef}
-        />
-        <label className="label">Готовность к командировкам</label>
+        <form action="">
+          <input
+            id="businessTrip"
+            name="businessTrip"
+            onBlur={handlerClickCheckbox}
+            type="checkbox"
+            ref={checkboxRef}
+          />
+          <label htmlFor="businessTrip" className="label">
+            Готовность к командировкам
+          </label>
+        </form>
       </div>
     </div>
   );

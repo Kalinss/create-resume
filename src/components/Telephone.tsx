@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Select } from "./Select";
-import { EntryField } from "./EntryField";
+import { Select, EntryField } from "./index";
 import { ITelephoneProps } from "../interfaces";
 import "./../style/blocks/telephone.scss";
 import { TelephoneDefaultProps } from "./defaultProps";
@@ -14,16 +13,17 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
   const onSelect = (result: { id: string; value: string }) => {
     setCode(result.value);
     if (tel) {
-      // if tel not empty or validate true
-      props.handlerChange({ id: "tel", value: `${code}${tel}` });
+      props.handlerChange({ id: "tel", value: `${result.value}${tel}` });
     }
   };
-  const onChange = (result: { id: string; value: string }) => {
+
+  const onBlur = (result: { id: string; value: string }) => {
     setTel(result.value);
-    props.handlerChange({ id: "tel", value: `${code}${tel}` });
+    props.handlerChange({ id: "tel", value: `${code}${result.value}` });
   };
+
   return (
-    <div className={`tel ${props.class || ""}`}>
+    <div className={`tel ${props.class}`}>
       <Select
         name="Телефон"
         id="telephone"
@@ -52,7 +52,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
         required={false}
         name="tepelphone"
         id="tepelphone"
-        handlerChange={onChange}
+        handlerChange={onBlur}
         placeholder=""
         class="tel__entryField"
         initialValue={props.state!["telephone"]}
