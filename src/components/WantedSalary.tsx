@@ -23,6 +23,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
 
   useEffect(()=>{
       props.handlerChange({ id: 'salary', value: `${salary} ${option}` });
+      props.handlerChange({id:'currency',value:option})
   },[option])
 
   return (

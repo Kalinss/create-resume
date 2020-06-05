@@ -32,9 +32,9 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
               Желаемая зарплата: <span>{data.salary}</span>
             </p>
           )}
-          {data.tel && (
+          {data.telephone && (
             <p className="telephone">
-              Телефон: <span>{data.tel}</span>
+              Телефон: <span>{`${data.telephoneCode}${data.telephone}`}</span>
             </p>
           )}
           <p className="email">

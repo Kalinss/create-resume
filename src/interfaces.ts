@@ -91,7 +91,7 @@ export interface IRadioList extends ICatalogComponentProps,IComponentMainHandler
     initialValue?:string;
 }
 export interface ICreateLinkProps {
-    link:string,
+    link:string
     text:string
     colorClass:string
     state:InitialStateInterface

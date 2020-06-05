@@ -16,7 +16,6 @@ export interface InitialStateInterface {
   movingToDiffCity: string;
   gender: string;
   family: string;
-  tel: string;
   children: string;
   driversLicense: string;
   language: string;
@@ -24,6 +23,7 @@ export interface InitialStateInterface {
   addInfo: string;
   links: string;
   telephone: string;
+  telephoneCode:string;
   counterEducation: string;
   counterExperience: string;
   salaryNumber:string;

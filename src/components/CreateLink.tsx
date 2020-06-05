@@ -21,7 +21,7 @@ export const CreateLink:React.FunctionComponent<ICreateLinkProps> = (props) => {
       <Link to={props.link}>
         <Button
           text={props.text}
-          handlerChange={() => {}}
+          handlerChange={()=>{}}
           disabled={disabled}
           class={`${props.colorClass} createLink__button`}
         />

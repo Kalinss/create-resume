@@ -5,15 +5,26 @@ import {
   DriversLicense,
   TextArea,
   CreateLink,
+  Button,
 } from "./index";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
+import { saveState } from "./../utils/storageHandler";
 import "../style/blocks/addInfo.scss";
 
 export const AdditionalInfo: React.FunctionComponent = () => {
   const context = useContext(ResumeContext);
   const actionAdd = (info: IActionAdd): void => {
     context.dispatch({ type: "add", id: info.id, value: info.value });
+  };
+
+  const handlerClickCreateButton = () => {
+    saveState(context.state);
+  };
+
+  const handlerClickResetData = ()=>{
+      localStorage.setItem("state", "");
+      window.location.reload();
   };
 
   return (
@@ -58,8 +69,22 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="addInfo__textArea"
         initialValue={context.state["links"]}
       />
-
-      <CreateLink link="/view/1" colorClass="green" text="Cоздать резюме" state={context.state} />
+      <div className="addInfo__buttonWrapper">
+        <div className='addInfo__createWrapper' onClick={handlerClickCreateButton}>
+          <CreateLink
+            link="/view/1"
+            colorClass="green"
+            text="Cоздать резюме"
+            state={context.state}
+          />
+        </div>
+        <Button
+          text="Сбросить данные"
+          class="red button--widthAuto addInfo__buttonReset"
+          disabled={false}
+          handlerChange={handlerClickResetData}
+        />
+      </div>
     </div>
   );
 };

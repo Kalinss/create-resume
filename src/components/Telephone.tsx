@@ -7,19 +7,12 @@ import { TelephoneDefaultProps } from "./defaultProps";
 export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
   Telephone.defaultProps = TelephoneDefaultProps;
 
-  const [code, setCode] = useState("+7");
-  const [tel, setTel] = useState("");
-
   const onSelect = (result: { id: string; value: string }) => {
-    setCode(result.value);
-    if (tel) {
-      props.handlerChange({ id: "tel", value: `${result.value}${tel}` });
-    }
+    props.handlerChange({id:'telephoneCode',value:result.value})
   };
 
   const onBlur = (result: { id: string; value: string }) => {
-    setTel(result.value);
-    props.handlerChange({ id: "tel", value: `${code}${result.value}` });
+    props.handlerChange({ id: "telephone", value:result.value });
   };
 
   return (
@@ -46,7 +39,7 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
           "+996",
           "+998",
         ]}
-        initialValue={props.state!["tel"]}
+        initialValue={props.state!["telephoneCode"]}
       />
       <EntryField
         required={false}

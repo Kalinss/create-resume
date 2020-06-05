@@ -4,6 +4,7 @@ import { TextAreaDefaultProps } from "./defaultProps";
 import "../style/blocks/textArea.scss";
 
 const createLineFeed = (str: string) => str.replace(/(?:\r\n|\r|\n)/g, "$$$");
+const createLineTranslation = (str:string)=>str.replace(/(\$\$)/g,'\n');
 
 export const TextArea: React.FunctionComponent<ITextAreaProps> = (props) => {
   TextArea.defaultProps = TextAreaDefaultProps;
@@ -12,7 +13,7 @@ export const TextArea: React.FunctionComponent<ITextAreaProps> = (props) => {
 
   useEffect(() => {
     if (props.initialValue) {
-      textAreaRef.current!.defaultValue = props.initialValue;
+      textAreaRef.current!.defaultValue = createLineTranslation(props.initialValue);
     }
   }, []);
 

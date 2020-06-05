@@ -6,6 +6,9 @@
   cursor: pointer;
   transition: 0.3s ease;
   border: 1px solid #ccc;
+  &--widthAuto{
+    max-width: inherit;
+  }
   &:disabled{
     opacity: 0.7;
     cursor: auto;
