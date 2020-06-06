@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export const DatePick: React.FunctionComponent<IDatePickProps> = (props) => {
-
   const [startDate, setStartDate] = useState(new Date());
   const onChange = (date: Date) => setStartDate(date);
 

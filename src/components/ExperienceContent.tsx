@@ -40,15 +40,13 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
             )}
           />
           <CheckboxList
-              items={['по настоящее время']}
-              id='nowTime'
-              name=''
-              initialValue={context.state[`nowTime${props.counter}`]}
-              handlerChange={actionAdd}
-              class="experience__nowCheckbox"
+            items={["по настоящее время"]}
+            id="nowTime"
+            name=""
+            initialValue={context.state[`nowTime${props.counter}`]}
+            handlerChange={actionAdd}
+            class="experience__nowCheckbox"
           />
-
-
         </div>
         <div className="education__right right">
           <EntryField

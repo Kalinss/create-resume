@@ -1,9 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { ITemplate } from "../interfaces";
 import "../style/blocks/template/firstTemplate.scss";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
-import { da } from "date-fns/locale";
 
 export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
   const data = props.state;

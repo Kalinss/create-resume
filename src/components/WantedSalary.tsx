@@ -1,4 +1,4 @@
-import React, {useEffect, useState,useRef} from "react";
+import React, { useEffect, useState } from "react";
 import { EntryField, Select } from "./index";
 import { IActionAdd } from "../interfaces";
 import { IWantedSalaryProps } from "../interfaces";
@@ -10,21 +10,21 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
 ) => {
   WantedSalary.defaultProps = WantedSalaryDefaultProps;
 
-  const [salary,setSalary] = useState(props.state!['salaryNumber'] ||'');
+  const [salary, setSalary] = useState(props.state!["salaryNumber"] || "");
   const [option, setOption] = useState<string>(
     props.state!["currency"] || "рублей"
   );
 
   const onBlur = (info: IActionAdd) => {
-      props.handlerChange({ id: 'salaryNumber', value: `${info.value}` });
-      props.handlerChange({ id: info.id, value: `${info.value} ${option}` });
-      setSalary(info.value);
+    props.handlerChange({ id: "salaryNumber", value: `${info.value}` });
+    props.handlerChange({ id: info.id, value: `${info.value} ${option}` });
+    setSalary(info.value);
   };
 
-  useEffect(()=>{
-      props.handlerChange({ id: 'salary', value: `${salary} ${option}` });
-      props.handlerChange({id:'currency',value:option})
-  },[option])
+  useEffect(() => {
+    props.handlerChange({ id: "salary", value: `${salary} ${option}` });
+    props.handlerChange({ id: "currency", value: option });
+  }, [option]);
 
   return (
     <div className={`wantedSalary ${props.class}`}>
@@ -36,7 +36,7 @@ export const WantedSalary: React.FunctionComponent<IWantedSalaryProps> = (
         placeholder="100000"
         handlerChange={onBlur}
         class="wantedSalary__entryField"
-        initialValue={props.state!["salaryNumber"] || ''}
+        initialValue={props.state!["salaryNumber"] || ""}
       />
       <Select
         name=""

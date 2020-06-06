@@ -22,9 +22,9 @@ export const AdditionalInfo: React.FunctionComponent = () => {
     saveState(context.state);
   };
 
-  const handlerClickResetData = ()=>{
-      localStorage.setItem("state", "");
-      window.location.reload();
+  const handlerClickResetData = () => {
+    localStorage.setItem("state", "");
+    window.location.reload();
   };
 
   return (
@@ -70,7 +70,10 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         initialValue={context.state["links"]}
       />
       <div className="addInfo__buttonWrapper">
-        <div className='addInfo__createWrapper' onClick={handlerClickCreateButton}>
+        <div
+          className="addInfo__createWrapper"
+          onClick={handlerClickCreateButton}
+        >
           <CreateLink
             link="/view/1"
             colorClass="blue"

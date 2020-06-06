@@ -2,7 +2,6 @@ import React from "react";
 import { IRadioList } from "../interfaces";
 import "./../style/blocks/radioList.scss";
 export const RadioList: React.FunctionComponent<IRadioList> = (props) => {
-
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     props.handlerChange({ id: props.id, value: e.target.id });
   };

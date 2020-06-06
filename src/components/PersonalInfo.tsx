@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../style/blocks/personalInfo.scss";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
-import { EntryField,Select,RadioList,CheckboxList,DatePick } from "./index";
+import { EntryField, Select, RadioList, CheckboxList, DatePick } from "./index";
 import {
   getDateFromStateDDMMYYYY,
   getStringDDMMYYYY,
@@ -21,7 +21,6 @@ export const PersonalInfo: React.FunctionComponent = () => {
       <h2>Личная информация</h2>
       <div className="section__wrapper">
         <div className="personalInfo__left left">
-
           <EntryField
             name="city"
             title="Город проживаня"

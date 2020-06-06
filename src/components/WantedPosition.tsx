@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { EntryField } from "./EntryField";
 import { ResumeContext } from "../store/store";
 import { IWantedPositionProps } from "../interfaces";

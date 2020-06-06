@@ -43,23 +43,23 @@ export const CheckboxListDefaultProps = {
 };
 
 export const PhotoDefaultProps = {
-    ...WrapperComponentDefaultProps,
-    initialValue:''
-}
+  ...WrapperComponentDefaultProps,
+  initialValue: "",
+};
 
 export const SelectDefaultProps = {
-    items:[],
-    ...WrapperComponentDefaultProps
-}
+  items: [],
+  ...WrapperComponentDefaultProps,
+};
 
 export const TextAreaDefaultProps = {
-    initialValue:'',
-    ...FieldDefaultProps,
-}
+  initialValue: "",
+  ...FieldDefaultProps,
+};
 
 export const ButtonDefaultProps = {
-    disabled:false,
-    class:'',
-    text:'',
-    handlerChange:()=>{}
-}
+  disabled: false,
+  class: "",
+  text: "",
+  handlerChange: () => {},
+};

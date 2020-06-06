@@ -8,7 +8,6 @@ import { IWorkPeriodProps } from "../interfaces";
 export const WorkPeriod: React.FunctionComponent<IWorkPeriodProps> = (
   props
 ) => {
-
   return (
     <div className="workPeriod">
       <p className="workPeriod__title headingInput">Период работы</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Select, EntryField } from "./index";
 import { ITelephoneProps } from "../interfaces";
 import "./../style/blocks/telephone.scss";
@@ -8,11 +8,11 @@ export const Telephone: React.FunctionComponent<ITelephoneProps> = (props) => {
   Telephone.defaultProps = TelephoneDefaultProps;
 
   const onSelect = (result: { id: string; value: string }) => {
-    props.handlerChange({id:'telephoneCode',value:result.value})
+    props.handlerChange({ id: "telephoneCode", value: result.value });
   };
 
   const onBlur = (result: { id: string; value: string }) => {
-    props.handlerChange({ id: "telephone", value:result.value });
+    props.handlerChange({ id: "telephone", value: result.value });
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toBase64 } from "../utils/toBase64";
 import { IPhotoProps } from "../interfaces";
 import "../style/blocks/photo.scss";

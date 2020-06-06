@@ -23,10 +23,10 @@ export interface InitialStateInterface {
   addInfo: string;
   links: string;
   telephone: string;
-  telephoneCode:string;
+  telephoneCode: string;
   counterEducation: string;
   counterExperience: string;
-  salaryNumber:string;
+  salaryNumber: string;
   photo: string;
   // -- Iterable keys
   [key: string]: any;

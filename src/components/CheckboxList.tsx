@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ICheckboxlistProps } from "../interfaces";
 import { CheckboxListDefaultProps } from "./defaultProps";
 import "./../style/blocks/checkboxList.scss";
