@@ -73,7 +73,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         <div className='addInfo__createWrapper' onClick={handlerClickCreateButton}>
           <CreateLink
             link="/view/1"
-            colorClass="green"
+            colorClass="blue"
             text="Cоздать резюме"
             state={context.state}
           />

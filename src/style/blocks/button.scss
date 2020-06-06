@@ -9,6 +9,18 @@
   &--widthAuto{
     max-width: inherit;
   }
+  &__print{
+    top: 95px;
+    left: 50%;
+    position: fixed;
+    transform: translateX(400px);
+  }
+  &__back{
+    position: fixed;
+    left: 50%;
+    max-width: none;
+    transform: translateX(400px);
+  }
   &:disabled{
     opacity: 0.7;
     cursor: auto;
@@ -48,6 +60,19 @@
         border-color:#ac2925;
         background-color: #d9534f;
       }
+    }
+  }
+  &.blue{
+    color: white;
+    border-color: #1c66ae;
+    font-size: 14px;
+    background-color: #207fdc;
+    &:hover{
+      background-color: #1f72c3;
+    }
+    &:disabled{
+      opacity: 0.7;
+      cursor: auto;
     }
   }
 }

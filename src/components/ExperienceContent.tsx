@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { IActionAdd, IExperienceContentProps } from "../interfaces";
 import { ResumeContext } from "../store/store";
-import { TextArea, EntryField, WorkPeriod } from "./index";
+import { TextArea, EntryField, WorkPeriod, CheckboxList } from "./index";
 import { getDateFromStateMMYYYY } from "../utils/dateFormat";
 
 export const ExperienceContent: React.FunctionComponent<IExperienceContentProps> = (
@@ -39,6 +39,16 @@ export const ExperienceContent: React.FunctionComponent<IExperienceContentProps>
               context.state[`workPeriodTo${props.counter}`]
             )}
           />
+          <CheckboxList
+              items={['по настоящее время']}
+              id='nowTime'
+              name=''
+              initialValue={context.state[`nowTime${props.counter}`]}
+              handlerChange={actionAdd}
+              class="experience__nowCheckbox"
+          />
+
+
         </div>
         <div className="education__right right">
           <EntryField

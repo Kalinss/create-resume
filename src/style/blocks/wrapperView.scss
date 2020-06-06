@@ -1,6 +1,7 @@
 .wrapperView{
   display: flex;
   justify-content: center;
+  position: relative;
 
   &__resume-container{
     width: 780px;
