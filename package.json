@@ -1,6 +1,7 @@
 {
   "name": "create-resume",
   "version": "0.1.0",
+  "homepage": "http://kalinss.github.io/create-resume",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
