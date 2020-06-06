@@ -75,7 +75,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
           onClick={handlerClickCreateButton}
         >
           <CreateLink
-            link="/view/1"
+            link={`${process.env.PUBLIC_URL}/view/1`}
             colorClass="blue"
             text="Cоздать резюме"
             state={context.state}

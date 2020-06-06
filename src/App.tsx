@@ -15,18 +15,16 @@ const getActualState = () => {
 };
 const App: React.FunctionComponent = () => {
   const [state, dispatch] = useReducer(reducers, getActualState());
-
-  console.log(state);
   return (
     <Router>
       <ResumeContext.Provider value={{ state, dispatch }}>
         <Switch>
-          <Route path="/view">
+          <Route path={`${process.env.PUBLIC_URL}/view/1`}>
             <Page>
               <ViewResume />
             </Page>
           </Route>
-          <Route path="/">
+          <Route path={`${process.env.PUBLIC_URL}/`}>
             <Page>
               <Constructor />
             </Page>
