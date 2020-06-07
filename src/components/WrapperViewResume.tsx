@@ -19,12 +19,12 @@ export const WrapperViewResume: React.FunctionComponent = () => {
           <p>Это позволит вам сохранить резюме в формате PDF</p>
         </div>
         <Switch>
-          <Route path={`${process.env.PUBLIC_URL}/view/1`}>
+          <Route path={`/view/1`}>
             <FirstTemplate state={context.state} />
           </Route>
         </Switch>
       </div>
-      <Link to={`${process.env.PUBLIC_URL}/`}>
+      <Link to={`/`}>
         <button className="button button__back button__wrap hidePrint blue">
           Редактировать
         </button>

@@ -9,7 +9,7 @@ import {
 } from "./index";
 import { ResumeContext } from "../store/store";
 import { IActionAdd } from "../interfaces";
-import { saveState } from "./../utils/storageHandler";
+import { saveState } from "../utils/storageHandler";
 import "../style/blocks/addInfo.scss";
 
 export const AdditionalInfo: React.FunctionComponent = () => {
@@ -75,7 +75,7 @@ export const AdditionalInfo: React.FunctionComponent = () => {
           onClick={handlerClickCreateButton}
         >
           <CreateLink
-            link={`${process.env.PUBLIC_URL}/view/1`}
+            link={`/view/1`}
             colorClass="blue"
             text="Cоздать резюме"
             state={context.state}

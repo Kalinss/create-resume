@@ -19,12 +19,12 @@ const App: React.FunctionComponent = () => {
     <Router>
       <ResumeContext.Provider value={{ state, dispatch }}>
         <Switch>
-          <Route path={`${process.env.PUBLIC_URL}/view/1`}>
+          <Route path={`/view/1`}>
             <Page>
               <ViewResume />
             </Page>
           </Route>
-          <Route path={`${process.env.PUBLIC_URL}/`}>
+          <Route path={`/`}>
             <Page>
               <Constructor />
             </Page>
