@@ -123,7 +123,7 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
                 <p className="positionJob">
                   Должность:&nbsp;<span>{data[`positionJob${counter}`]}</span>
                 </p>
-                {data["responsibility"] && (
+                {data[`responsibility${counter}`] && (
                   <p className="responsibility textbox">
                     Должностные обязанности и достижения:
                     <span>
