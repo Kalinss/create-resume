@@ -18,58 +18,58 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
         </div>
         <div className="rightTemplate">
           <h3>{`${data.familyName.trim()} ${data.name.trim()} ${data.surname.trim()}`}</h3>
-          <p className="position">{data.wantedPosition}</p>
-          <p className="busyness">
+          <p className="position info">{data.wantedPosition}</p>
+          <p className="busyness info">
             Занятость:&nbsp;<span>{data.busyness}</span>
           </p>
-          <p className="schedule">
+          <p className="schedule info">
             График работы:&nbsp;<span>{data.schedule}</span>
           </p>
-          <p className="businessTrip">
+          <p className="businessTrip info">
             Готовность к командировкам:&nbsp;
             <span>{data.bussinessTrip ? "да" : "нет"}</span>
           </p>
           {data.salaryNumber.trim() && (
-            <p className="salary">
+            <p className="salary info">
               Желаемая зарплата:&nbsp;<span>{data.salary}</span>
             </p>
           )}
           {data.telephone.trim() && (
-            <p className="telephone">
+            <p className="telephone info">
               Телефон:&nbsp;
               <span>{`${data.telephoneCode}${data.telephone}`}</span>
             </p>
           )}
-          <p className="email">
+          <p className="email info">
             Электронная почта:&nbsp;<span>{data.email}</span>
           </p>
         </div>
       </div>
       <h4>Личная информация</h4>
-      <p className="nationality">
+      <p className="nationality info">
         Гражданство:&nbsp;<span>{data.nationality}</span>
       </p>
       {data.city.trim() && (
-        <p className="city">
+        <p className="city info">
           Место проживания:&nbsp;<span>{data.city}</span>
         </p>
       )}
 
-      <p className="movingToDiffCity">
+      <p className="movingToDiffCity info">
         Переезд:&nbsp;<span>{data.movingToDiffCity}</span>
       </p>
-      <p className="dateBirth">
+      <p className="dateBirth info">
         Дата рождения:&nbsp;<span>{data.dateBirth}</span>
       </p>
       {data.gender.trim() && (
-        <p className="gender">
+        <p className="gender info">
           Пол:&nbsp;<span>{data.gender}</span>
         </p>
       )}
-      <p className="family">
+      <p className="family info">
         Семейное положение:&nbsp;<span>{data.family}</span>
       </p>
-      <p className="children">
+      <p className="children info">
         Наличие детей:&nbsp;
         <span>{data.children ? `${data.children}` : "Нет детей"}</span>
       </p>
@@ -78,22 +78,22 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
         education.map((counter) => {
           if (data[`institute${counter}`]) {
             return (
-              <div className="educationBox">
-                <p className="institute">
+              <div className="educationBox info">
+                <p className="institute info">
                   Учебное заведение:&nbsp;
                   <span>{data[`institute${counter}`]}</span>
                 </p>
-                <p className="faculty">
+                <p className="faculty info">
                   Факультет:&nbsp;<span>{data[`faculty${counter}`]}</span>
                 </p>
-                <p className="specialty">
+                <p className="specialty info">
                   Специальность:&nbsp;<span>{data[`specialty${counter}`]}</span>
                 </p>
-                <p className="formOfEducation">
+                <p className="formOfEducation info">
                   Форма обучения:&nbsp;
                   <span>{data[`formOfEducation${counter}`]}</span>
                 </p>
-                <p className="endingEducation">
+                <p className="endingEducation info">
                   Год окончания:&nbsp;
                   <span>{data[`endingEducation${counter}`]}</span>
                 </p>
@@ -107,12 +107,12 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
         experience.map((counter) => {
           if (data[`organization${counter}`]) {
             return (
-              <div className="experienceBox">
-                <p className="organization">
+              <div className="experienceBox info">
+                <p className="organization info">
                   Организация:&nbsp;
                   <span>{data[`organization${counter}`]}</span>
                 </p>
-                <p className="period">
+                <p className="period info">
                   Период работы: с&nbsp;
                   <span>{data[`workPeriodFrom${counter}`]}</span> &nbsp;
                   <span>
@@ -120,11 +120,11 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
                       "по " + data[`workPeriodTo${counter}`]}
                   </span>
                 </p>
-                <p className="positionJob">
+                <p className="positionJob info">
                   Должность:&nbsp;<span>{data[`positionJob${counter}`]}</span>
                 </p>
                 {data[`responsibility${counter}`] && (
-                  <p className="responsibility textbox">
+                  <p className="responsibility textbox info">
                     Должностные обязанности и достижения:
                     <span>
                       {data[`responsibility${counter}`]
@@ -146,22 +146,22 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
         data.addInfo ||
         data.links) && <h4>Дополнительная информация</h4>}
       {data.language && (
-        <p className="language">
+        <p className="language info">
           Языки: <span>{data.language}</span>
         </p>
       )}
       {data.driversLicense && (
-        <p className="driversLicense">
+        <p className="driversLicense info">
           Водительские права: <span>{data.driversLicense}</span>
         </p>
       )}
       {data.medicalBook && (
-        <p className="medicalBook">
+        <p className="medicalBook info">
           Наличие медицинской книжки: <span>{data.medicalBook}</span>
         </p>
       )}
       {data.addInfo && (
-        <p className="addInfo textbox">
+        <p className="addInfo textbox info">
           Дополнительная информация:
           {data.addInfo.split("$$").map((item) => {
             return <p>{item}</p>;
@@ -169,7 +169,7 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
         </p>
       )}
       {data.links && (
-        <p className="links textbox">
+        <p className="links textbox info">
           Ссылки:
           {data.links.split("$$").map((item) => {
             return <p>{item}</p>;

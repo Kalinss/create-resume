@@ -2,12 +2,19 @@
   padding: 40px;
   display: flex;
   flex-direction: column;
-
+  & .info {
+    word-wrap: break-word;
+  }
   & .heading {
     display: flex;
     justify-content: flex-start;
+    & h3 {
+      word-wrap: break-word;
+    }
   }
-
+  & .rightTemplate {
+    max-width: 450px;
+  }
   & .photo-box {
     width: 220px;
     height: 220px;
@@ -66,4 +73,3 @@
     margin: 0mm;
   }
 }
-
