@@ -2,9 +2,13 @@ import React from "react";
 import { ITemplate } from "../interfaces";
 import "../style/blocks/template/firstTemplate.scss";
 
+import { FaTelegram, FaViber, FaWhatsapp } from "react-icons/fa";
 export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
   const data = props.state;
 
+  const telegram = data.messengers.includes("Telegram");
+  const viber = data.messengers.includes("Viber");
+  const whatsapp = data.messengers.includes("Whatsapp");
   const [education, experience] = [
     props.state.counterEducation.split("."),
     props.state.counterExperience.split(".").reverse(),
@@ -38,6 +42,15 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
             <p className="telephone info">
               Телефон:&nbsp;
               <span>{`${data.telephoneCode}${data.telephone}`}</span>
+              {telegram && (
+                <span className="firstTemplate__icon">{<FaTelegram />}</span>
+              )}
+              {viber && (
+                <span className="firstTemplate__icon">{<FaViber />}</span>
+              )}
+              {whatsapp && (
+                <span className="firstTemplate__icon">{<FaWhatsapp />}</span>
+              )}
             </p>
           )}
           <p className="email info">
