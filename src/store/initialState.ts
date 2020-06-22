@@ -22,6 +22,7 @@ export const initialState: InitialStateInterface = {
   children: "",
   driversLicense: "",
   language: "",
+  aboutMe: "",
   medicalBook: "",
   addInfo: "",
   links: "",

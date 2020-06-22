@@ -181,6 +181,14 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
           })}
         </p>
       )}
+      {data.aboutMe && (
+        <p className="addInfo textbox info">
+          О себе:
+          {data.aboutMe.split("$$").map((item) => {
+            return <p>{item}</p>;
+          })}
+        </p>
+      )}
       {data.links && (
         <p className="links textbox info">
           Ссылки:

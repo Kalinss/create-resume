@@ -59,7 +59,15 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="addInfo__textArea"
         initialValue={context.state["addInfo"]}
       />
-
+      <TextArea
+        name="aboutMe"
+        title="О себе"
+        handlerChange={actionAdd}
+        id="aboutMe"
+        required={false}
+        class="addInfo__textArea"
+        initialValue={context.state["aboutMe"]}
+      />
       <TextArea
         name="links"
         title="Ссылки"

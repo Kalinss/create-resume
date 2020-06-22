@@ -28,6 +28,7 @@ export interface InitialStateInterface {
   counterExperience: string;
   salaryNumber: string;
   photo: string;
+  aboutMe: string;
   // -- Iterable keys
   [key: string]: any;
   // --- Education ---
