@@ -153,24 +153,35 @@ export const FirstTemplate: React.FunctionComponent<ITemplate> = (props) => {
           }
           return;
         })}
-      {(data.language ||
-        data.driversLicense ||
+      {(data.keySkills || data.language) && <h4>Ключевые навыки</h4>}
+
+      {data.language && (
+        <p className="language info">
+          Языки:&nbsp;<span>{data.language}</span>
+        </p>
+      )}
+      {data.keySkills && (
+        <p className="addInfo textbox info">
+          Навыки:
+          {data.keySkills.split("$$").map((item) => {
+            return <p>{item}</p>;
+          })}
+        </p>
+      )}
+      {(data.driversLicense ||
         data.medicalBook ||
         data.addInfo ||
         data.links) && <h4>Дополнительная информация</h4>}
-      {data.language && (
-        <p className="language info">
-          Языки: <span>{data.language}</span>
-        </p>
-      )}
+
       {data.driversLicense && (
         <p className="driversLicense info">
-          Водительские права: <span>{data.driversLicense}</span>
+          Водительские права:&nbsp;<span>{data.driversLicense}</span>
         </p>
       )}
+
       {data.medicalBook && (
         <p className="medicalBook info">
-          Наличие медицинской книжки: <span>{data.medicalBook}</span>
+          Наличие медицинской книжки:&nbsp;<span>{data.medicalBook}</span>
         </p>
       )}
       {data.addInfo && (

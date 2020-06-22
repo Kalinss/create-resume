@@ -38,7 +38,15 @@ export const AdditionalInfo: React.FunctionComponent = () => {
         class="section__entryField full"
         initialValue={context.state["language"]}
       />
-
+      <TextArea
+        name="keySkills"
+        title="Ключевые навыки"
+        handlerChange={actionAdd}
+        id="keySkills"
+        required={false}
+        class="addInfo__textArea addInfo__keySkills"
+        initialValue={context.state["keySkills"]}
+      />
       <DriversLicense handlerChange={actionAdd} state={context.state} />
 
       <CheckboxList

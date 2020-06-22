@@ -1,27 +1,29 @@
-.addInfo{
-  &__medicalBook{
+.addInfo {
+  &__medicalBook {
     margin-left: 165px;
     margin-top: 25px;
   }
-  &__textArea{
+  &__textArea {
     margin-top: 15px;
   }
-  &__buttonWrapper{
+  &__keySkills {
+    margin-bottom: 15px;
+  }
+  &__buttonWrapper {
     display: flex;
     margin-top: 50px;
     justify-content: flex-end;
     position: relative;
     width: 100%;
   }
-  &__createWrapper{
+  &__createWrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
-  &__createLink{
-
+  &__createLink {
   }
-  &__buttonReset{
+  &__buttonReset {
     height: 43px;
   }
 }

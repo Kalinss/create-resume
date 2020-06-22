@@ -18,6 +18,7 @@ export const initialState: InitialStateInterface = {
   dateBirth: "",
   movingToDiffCity: "",
   gender: "",
+  keySkills: "",
   family: "",
   children: "",
   driversLicense: "",
